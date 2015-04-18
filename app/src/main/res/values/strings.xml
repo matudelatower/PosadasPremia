@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Registro Usuarios Offline</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Listado</string>
+    <string name="admin_code">111</string>
+    <string name="title_activity_admin">Administracion</string>
+    <string name="title_activity_registro">Registro de Usuario</string>
+    <string name="title_activity_persona_detalle">PersonaDetalle</string>
+    <string name="title_activity_ver_persona">ver_persona</string>
+
+</resources>
