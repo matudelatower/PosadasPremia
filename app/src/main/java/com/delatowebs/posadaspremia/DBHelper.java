@@ -14,7 +14,7 @@ public class DBHelper  extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 4;
 
     // Database Name
-    private static final String DATABASE_NAME = "padron.db";
+    private static final String DATABASE_NAME = "registro.db";
 
     public DBHelper(Context context ) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,13 +27,24 @@ public class DBHelper  extends SQLiteOpenHelper {
 
         String CREATE_TABLE_STUDENT = "CREATE TABLE " + Persona.TABLE  + "("
                 + Persona.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
-                + Persona.KEY_razon_social + " TEXT, "
-                + Persona.KEY_documento + " TEXT, "
-                + Persona.KEY_cuit + " TEXT, "
-                + Persona.KEY_fisica + " TEXT, "
-                + Persona.KEY_documento_a_verificar + " TEXT, "
-                + Persona.KEY_domicilio + " TEXT, "
-                + Persona.KEY_nro_partida + " TEXT )";
+                + Persona.KEY_DOCUMENTO + " TEXT, "
+                + Persona.KEY_CUIT + " TEXT, "
+                + Persona.KEY_APELLIDO + " TEXT, "
+                + Persona.KEY_NOMBRE + " TEXT, "
+                + Persona.KEY_TIPO_DOC + " TEXT, "
+                + Persona.KEY_FECHA_NACIMIENTO + " TEXT, "
+                + Persona.KEY_SEXO + " TEXT, "
+                + Persona.KEY_ESTADO_CIVIL + " TEXT, "
+                + Persona.KEY_EMAIL + " TEXT, "
+                + Persona.KEY_TEL_PRINCIPAL + " TEXT, "
+                + Persona.KEY_TEL_SECUNDARIO + " TEXT,"
+                + Persona.KEY_DIRECCION + " TEXT,"
+                + Persona.KEY_NUMERO + " TEXT,"
+                + Persona.KEY_DEPARTAMENTO + " TEXT,"
+                + Persona.KEY_PISO + " TEXT,"
+                + Persona.KEY_CUESTIONARIO + " TEXT,"
+                + Persona.KEY_CREADO_POR + " TEXT,"
+                + Persona.KEY_ACTUALIZADO + " TEXT )";
 
         db.execSQL(CREATE_TABLE_STUDENT);
 

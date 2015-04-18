@@ -22,13 +22,24 @@ public class PersonaRepository {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Persona.KEY_razon_social, persona.getRazonSocial());
-        values.put(Persona.KEY_documento, persona.getDocumento());
-        values.put(Persona.KEY_cuit, persona.getCuit());
-        values.put(Persona.KEY_fisica, persona.getFisica());
-        values.put(Persona.KEY_documento_a_verificar, persona.getDocumentoAVerificar());
-        values.put(Persona.KEY_domicilio, persona.getDomicilio());
-        values.put(Persona.KEY_nro_partida, persona.getNroPartida());
+        values.put(Persona.KEY_DOCUMENTO, persona.getDocumento());
+        values.put(Persona.KEY_CUIT, persona.getCuit());
+        values.put(Persona.KEY_APELLIDO, persona.getApellido());
+        values.put(Persona.KEY_NOMBRE, persona.getNombre());
+        values.put(Persona.KEY_TIPO_DOC, persona.getTipoDocumento());
+        values.put(Persona.KEY_FECHA_NACIMIENTO, persona.getFechaNacimiento());
+        values.put(Persona.KEY_SEXO, persona.getSexo());
+        values.put(Persona.KEY_ESTADO_CIVIL, persona.getEstadoCivil());
+        values.put(Persona.KEY_EMAIL, persona.getEmail());
+        values.put(Persona.KEY_TEL_PRINCIPAL, persona.getTelPrincipal());
+        values.put(Persona.KEY_TEL_SECUNDARIO, persona.getTelSecundario());
+        values.put(Persona.KEY_DIRECCION, persona.getDireccion());
+        values.put(Persona.KEY_NUMERO, persona.getNumero());
+        values.put(Persona.KEY_DEPARTAMENTO, persona.getDepartamento());
+        values.put(Persona.KEY_PISO, persona.getPiso());
+        values.put(Persona.KEY_CUESTIONARIO, persona.getCuestionario());
+        values.put(Persona.KEY_CREADO_POR, persona.getCreadoPor());
+        values.put(Persona.KEY_ACTUALIZADO, persona.getActualizado());
 
 
 
@@ -51,13 +62,24 @@ public class PersonaRepository {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(Persona.KEY_razon_social, persona.getRazonSocial());
-        values.put(Persona.KEY_documento, persona.getDocumento());
-        values.put(Persona.KEY_cuit, persona.getCuit());
-        values.put(Persona.KEY_fisica, persona.getFisica());
-        values.put(Persona.KEY_documento_a_verificar, persona.getDocumentoAVerificar());
-        values.put(Persona.KEY_domicilio, persona.getDomicilio());
-        values.put(Persona.KEY_nro_partida, persona.getNroPartida());
+        values.put(Persona.KEY_DOCUMENTO, persona.getDocumento());
+        values.put(Persona.KEY_CUIT, persona.getCuit());
+        values.put(Persona.KEY_APELLIDO, persona.getApellido());
+        values.put(Persona.KEY_NOMBRE, persona.getNombre());
+        values.put(Persona.KEY_TIPO_DOC, persona.getTipoDocumento());
+        values.put(Persona.KEY_FECHA_NACIMIENTO, persona.getFechaNacimiento());
+        values.put(Persona.KEY_SEXO, persona.getSexo());
+        values.put(Persona.KEY_ESTADO_CIVIL, persona.getEstadoCivil());
+        values.put(Persona.KEY_EMAIL, persona.getEmail());
+        values.put(Persona.KEY_TEL_PRINCIPAL, persona.getTelPrincipal());
+        values.put(Persona.KEY_TEL_SECUNDARIO, persona.getTelSecundario());
+        values.put(Persona.KEY_DIRECCION, persona.getDireccion());
+        values.put(Persona.KEY_NUMERO, persona.getNumero());
+        values.put(Persona.KEY_DEPARTAMENTO, persona.getDepartamento());
+        values.put(Persona.KEY_PISO, persona.getPiso());
+        values.put(Persona.KEY_CUESTIONARIO, persona.getCuestionario());
+        values.put(Persona.KEY_CREADO_POR, persona.getCreadoPor());
+        values.put(Persona.KEY_ACTUALIZADO, persona.getActualizado());
 
         db.update(Persona.TABLE, values, Persona.KEY_ID + "=" + persona.getId(), null);
         db.close(); // Closing database connection
@@ -67,13 +89,24 @@ public class PersonaRepository {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
                 Persona.KEY_ID + "," +
-                Persona.KEY_razon_social + "," +
-                Persona.KEY_documento + "," +
-                Persona.KEY_cuit + "," +
-                Persona.KEY_fisica + "," +
-                Persona.KEY_documento_a_verificar + "," +
-                Persona.KEY_domicilio + "," +
-                Persona.KEY_nro_partida +
+                Persona.KEY_DOCUMENTO + "," +
+                Persona.KEY_CUIT + "," +
+                Persona.KEY_APELLIDO + "," +
+                Persona.KEY_NOMBRE + "," +
+                Persona.KEY_TIPO_DOC + "," +
+                Persona.KEY_FECHA_NACIMIENTO + "," +
+                Persona.KEY_SEXO + "," +
+                Persona.KEY_ESTADO_CIVIL + "," +
+                Persona.KEY_EMAIL + "," +
+                Persona.KEY_TEL_PRINCIPAL + "," +
+                Persona.KEY_TEL_SECUNDARIO + "," +
+                Persona.KEY_DIRECCION + "," +
+                Persona.KEY_NUMERO + "," +
+                Persona.KEY_DEPARTAMENTO + "," +
+                Persona.KEY_PISO + "," +
+                Persona.KEY_CUESTIONARIO + "," +
+                Persona.KEY_CREADO_POR + "," +
+                Persona.KEY_ACTUALIZADO +
                 " FROM " + Persona.TABLE;
 
         ArrayList personaList =new ArrayList();
@@ -84,7 +117,7 @@ public class PersonaRepository {
         if (cursor.moveToFirst()) {
             do {
                 personaList.add(cursor.getString(cursor.getColumnIndex(Persona.KEY_ID)) + "_"
-                        + cursor.getString(cursor.getColumnIndex(Persona.KEY_razon_social)));
+                        + cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
 
             } while (cursor.moveToNext());
         }
@@ -99,14 +132,26 @@ public class PersonaRepository {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
                 Persona.KEY_ID + "," +
-                Persona.KEY_razon_social + "," +
-                Persona.KEY_documento + "," +
-                Persona.KEY_cuit + "," +
-                Persona.KEY_fisica + "," +
-                Persona.KEY_documento_a_verificar + "," +
-                Persona.KEY_domicilio + "," +
-                Persona.KEY_nro_partida +
+                Persona.KEY_DOCUMENTO + "," +
+                Persona.KEY_CUIT + "," +
+                Persona.KEY_APELLIDO + "," +
+                Persona.KEY_NOMBRE + "," +
+                Persona.KEY_TIPO_DOC + "," +
+                Persona.KEY_FECHA_NACIMIENTO + "," +
+                Persona.KEY_SEXO + "," +
+                Persona.KEY_ESTADO_CIVIL + "," +
+                Persona.KEY_EMAIL + "," +
+                Persona.KEY_TEL_PRINCIPAL + "," +
+                Persona.KEY_TEL_SECUNDARIO + "," +
+                Persona.KEY_DIRECCION + "," +
+                Persona.KEY_NUMERO + "," +
+                Persona.KEY_DEPARTAMENTO + "," +
+                Persona.KEY_PISO + "," +
+                Persona.KEY_CUESTIONARIO + "," +
+                Persona.KEY_CREADO_POR + "," +
+                Persona.KEY_ACTUALIZADO +
                 " FROM " + Persona.TABLE;
+
 
         //Persona persona = new Persona();
         ArrayList<HashMap<String, String>> personaList = new ArrayList<HashMap<String, String>>();
@@ -119,7 +164,7 @@ public class PersonaRepository {
             do {
                 HashMap<String, String> persona = new HashMap<String, String>();
                 persona.put("id", cursor.getString(cursor.getColumnIndex(Persona.KEY_ID)));
-                persona.put("name", cursor.getString(cursor.getColumnIndex(Persona.KEY_razon_social)));
+                persona.put("documento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
                 personaList.add(persona);
 
             } while (cursor.moveToNext());
@@ -135,15 +180,25 @@ public class PersonaRepository {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
                 Persona.KEY_ID + "," +
-                Persona.KEY_razon_social + "," +
-                Persona.KEY_documento + "," +
-                Persona.KEY_cuit + "," +
-                Persona.KEY_fisica + "," +
-                Persona.KEY_documento_a_verificar + "," +
-                Persona.KEY_domicilio + "," +
-                Persona.KEY_nro_partida +
-                " FROM " + Persona.TABLE
-                + " WHERE " +
+                Persona.KEY_DOCUMENTO + "," +
+                Persona.KEY_CUIT + "," +
+                Persona.KEY_APELLIDO + "," +
+                Persona.KEY_NOMBRE + "," +
+                Persona.KEY_TIPO_DOC + "," +
+                Persona.KEY_FECHA_NACIMIENTO + "," +
+                Persona.KEY_SEXO + "," +
+                Persona.KEY_ESTADO_CIVIL + "," +
+                Persona.KEY_EMAIL + "," +
+                Persona.KEY_TEL_PRINCIPAL + "," +
+                Persona.KEY_TEL_SECUNDARIO + "," +
+                Persona.KEY_DIRECCION + "," +
+                Persona.KEY_NUMERO + "," +
+                Persona.KEY_DEPARTAMENTO + "," +
+                Persona.KEY_PISO + "," +
+                Persona.KEY_CUESTIONARIO + "," +
+                Persona.KEY_CREADO_POR + "," +
+                Persona.KEY_ACTUALIZADO +
+                " FROM " + Persona.TABLE + " WHERE " +
                 Persona.KEY_ID + "=" + Id;
 
 
@@ -156,10 +211,24 @@ public class PersonaRepository {
         if (cursor.moveToFirst()) {
             do {
                 persona.setId(cursor.getInt(cursor.getColumnIndex(Persona.KEY_ID)));
-                persona.setRazonSocial(cursor.getString(cursor.getColumnIndex(Persona.KEY_razon_social)));
-                persona.setDocumento(cursor.getString(cursor.getColumnIndex(Persona.KEY_documento)));
-                persona.setCuit(cursor.getString(cursor.getColumnIndex(Persona.KEY_cuit)));
-                persona.setDomicilio(cursor.getString(cursor.getColumnIndex(Persona.KEY_domicilio)));
+                persona.setDocumento(cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
+                persona.setCuit(cursor.getString(cursor.getColumnIndex(Persona.KEY_CUIT)));
+                persona.setApellido(cursor.getString(cursor.getColumnIndex(Persona.KEY_APELLIDO)));
+                persona.setNombre(cursor.getString(cursor.getColumnIndex(Persona.KEY_NOMBRE)));
+                persona.setTipoDocumento(cursor.getString(cursor.getColumnIndex(Persona.KEY_TIPO_DOC)));
+                persona.setFechaNacimiento(cursor.getString(cursor.getColumnIndex(Persona.KEY_FECHA_NACIMIENTO)));
+                persona.setSexo(cursor.getString(cursor.getColumnIndex(Persona.KEY_SEXO)));
+                persona.setEstadoCivil(cursor.getString(cursor.getColumnIndex(Persona.KEY_ESTADO_CIVIL)));
+                persona.setEmail(cursor.getString(cursor.getColumnIndex(Persona.KEY_EMAIL)));
+                persona.setTelPrincipal(cursor.getString(cursor.getColumnIndex(Persona.KEY_TEL_PRINCIPAL)));
+                persona.setTelSecundario(cursor.getString(cursor.getColumnIndex(Persona.KEY_TEL_SECUNDARIO)));
+                persona.setDireccion(cursor.getString(cursor.getColumnIndex(Persona.KEY_DIRECCION)));
+                persona.setNumero(cursor.getString(cursor.getColumnIndex(Persona.KEY_NUMERO)));
+                persona.setDepartamento(cursor.getString(cursor.getColumnIndex(Persona.KEY_DEPARTAMENTO)));
+                persona.setPiso(cursor.getString(cursor.getColumnIndex(Persona.KEY_PISO)));
+                persona.setCuestionario(cursor.getString(cursor.getColumnIndex(Persona.KEY_CUESTIONARIO)));
+                persona.setCreadoPor(cursor.getString(cursor.getColumnIndex(Persona.KEY_CREADO_POR)));
+                persona.setActualizado(cursor.getString(cursor.getColumnIndex(Persona.KEY_ACTUALIZADO)));
 
             } while (cursor.moveToNext());
         }

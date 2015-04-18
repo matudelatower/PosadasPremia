@@ -1,7 +1,5 @@
 package com.delatowebs.posadaspremia;
 
-import android.content.Context;
-
 /**
  * Created by matias on 15/04/15.
  */
@@ -11,85 +9,194 @@ public class Persona {
 
     // Labels Table Columns names
     public static final String KEY_ID = "_id";
-    public static final String KEY_razon_social = "razon_social";
-    public static final String KEY_documento = "documento";
-    public static final String KEY_cuit = "cuit";
-    public static final String KEY_fisica = "fisica";
-    public static final String KEY_documento_a_verificar = "documento_a_verificar";
-    public static final String KEY_domicilio = "domicilio";
-    public static final String KEY_nro_partida = "nro_partida";
+    public static final String KEY_DOCUMENTO = "documento";
+    public static final String KEY_CUIT = "cuit";
+    public static final String KEY_APELLIDO = "apellido";
+    public static final String KEY_NOMBRE = "nombre";
+    public static final String KEY_TIPO_DOC = "tipo_documento";
+    public static final String KEY_FECHA_NACIMIENTO = "fecha_nacimiento";
+    public static final String KEY_SEXO = "sexo";
+    public static final String KEY_ESTADO_CIVIL = "estado_civil";
+    public static final String KEY_EMAIL = "email";
+    public static final String KEY_TEL_PRINCIPAL = "tel_principal";
+    public static final String KEY_TEL_SECUNDARIO = "tel_secundario";
+    public static final String KEY_DIRECCION = "direccion";
+    public static final String KEY_NUMERO = "numero";
+    public static final String KEY_DEPARTAMENTO = "departamento";
+    public static final String KEY_PISO = "piso";
+    public static final String KEY_CUESTIONARIO = "cuestionario";
+    public static final String KEY_CREADO_POR = "creado_por";
+    public static final String KEY_ACTUALIZADO = "actualizado";
 
-    private Integer Id;
-    private String RazonSocial;
-    private String Documento;
-    private String Cuit;
-    private String Fisica;
-    private String DocumentoAVerificar;
-    private String Domicilio;
-    private String NroPartida;
-
+    private Integer id;
+    private String documento;
+    private String cuit;
+    private String apellido;
+    private String nombre;
+    private String tipoDocumento;
+    private String fechaNacimiento;
+    private String sexo;
+    private String estadoCivil;
+    private String email;
+    private String telPrincipal;
+    private String telSecundario;
+    private String direccion;
+    private String numero;
+    private String departamento;
+    private String piso;
+    private String cuestionario;
+    private String creadoPor;
+    private String actualizado;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
-    }
-
-    public String getRazonSocial() {
-        return RazonSocial;
-    }
-
-    public void setRazonSocial(String razonSocial) {
-        RazonSocial = razonSocial;
+        this.id = id;
     }
 
     public String getDocumento() {
-        return Documento;
+        return documento;
     }
 
     public void setDocumento(String documento) {
-        Documento = documento;
+        this.documento = documento;
     }
 
     public String getCuit() {
-        return Cuit;
+        return cuit;
     }
 
     public void setCuit(String cuit) {
-        Cuit = cuit;
+        this.cuit = cuit;
     }
 
-    public String getFisica() {
-        return Fisica;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setFisica(String fisica) {
-        Fisica = fisica;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getDocumentoAVerificar() {
-        return DocumentoAVerificar;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDocumentoAVerificar(String documentoAVerificar) {
-        DocumentoAVerificar = documentoAVerificar;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDomicilio() {
-        return Domicilio;
+    public String getTipoDocumento() {
+        return tipoDocumento;
     }
 
-    public void setDomicilio(String domicilio) {
-        Domicilio = domicilio;
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
-    public String getNroPartida() {
-        return NroPartida;
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setNroPartida(String nroPartida) {
-        NroPartida = nroPartida;
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelPrincipal() {
+        return telPrincipal;
+    }
+
+    public void setTelPrincipal(String telPrincipal) {
+        this.telPrincipal = telPrincipal;
+    }
+
+    public String getTelSecundario() {
+        return telSecundario;
+    }
+
+    public void setTelSecundario(String telSecundario) {
+        this.telSecundario = telSecundario;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getPiso() {
+        return piso;
+    }
+
+    public void setPiso(String piso) {
+        this.piso = piso;
+    }
+
+    public String getCuestionario() {
+        return cuestionario;
+    }
+
+    public void setCuestionario(String cuestionario) {
+        this.cuestionario = cuestionario;
+    }
+
+    public String getCreadoPor() {
+        return creadoPor;
+    }
+
+    public void setCreadoPor(String creadoPor) {
+        this.creadoPor = creadoPor;
+    }
+
+    public String getActualizado() {
+        return actualizado;
+    }
+
+    public void setActualizado(String actualizado) {
+        this.actualizado = actualizado;
     }
 }
