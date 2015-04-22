@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
         if (dniStr.equals(adminCode)){
            activity=AdminActivity.class;
         }else{
-           activity=RegistroActivity.class;
+           activity=ListadoRegistroActivity.class;
         }
 
         Intent intent= new Intent(this, activity);

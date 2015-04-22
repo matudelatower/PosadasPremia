@@ -164,7 +164,8 @@ public class PersonaRepository {
             do {
                 HashMap<String, String> persona = new HashMap<String, String>();
                 persona.put("id", cursor.getString(cursor.getColumnIndex(Persona.KEY_ID)));
-                persona.put("documento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
+                persona.put("nombre", cursor.getString(cursor.getColumnIndex(Persona.KEY_NOMBRE)));
+                persona.put("apellido", cursor.getString(cursor.getColumnIndex(Persona.KEY_APELLIDO)));
                 personaList.add(persona);
 
             } while (cursor.moveToNext());

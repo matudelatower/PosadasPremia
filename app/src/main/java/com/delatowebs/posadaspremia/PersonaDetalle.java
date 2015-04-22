@@ -15,35 +15,63 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.security.SecurityPermission;
 import java.util.ArrayList;
 
 public class PersonaDetalle extends ActionBarActivity implements android.view.View.OnClickListener{
 
-    Button btnSave ,  btnDelete;
+    Button btnSave;
     Button btnClose;
-    EditText editTextRazonSocial;
+    EditText editTextNombre;
+    EditText editTextApellido;
     EditText editTextDocumento;
-    EditText editTextDomicilio;
+    EditText editTextCuit;
+    EditText editTextFechaNacimiento;
+    EditText editTextMail;
+    EditText editTextTelPrincipal;
+    EditText editTextTelSecundario;
+    EditText editTextDireccion;
+    EditText editTextNumero;
+    EditText editTextDepartamento;
+    EditText editTextPiso;
+    Spinner spinnerTipoDocumento;
+    Spinner spinnerSexo;
+    Spinner spinnerEstadoCivil;
+
     private int _Persona_Id=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_persona_detalle);
-        setContentView(R.layout.fragment_persona_detalle);
+        //setContentView(R.layout.fragment_persona_detalle);
+        setContentView(R.layout.activity_registro);
 
         btnSave = (Button) findViewById(R.id.btnSave);
-        btnDelete = (Button) findViewById(R.id.btnDelete);
         btnClose = (Button) findViewById(R.id.btnClose);
 
-        editTextRazonSocial = (EditText) findViewById(R.id.editTextRazonSocial);
+        editTextApellido = (EditText) findViewById(R.id.editTextApellido);
+        editTextNombre = (EditText) findViewById(R.id.editTextNombre);
         editTextDocumento = (EditText) findViewById(R.id.editTextDocumento);
-        editTextDomicilio = (EditText) findViewById(R.id.editTextDomicilio);
+        editTextCuit = (EditText) findViewById(R.id.editTextCuit);
+        editTextFechaNacimiento = (EditText) findViewById(R.id.editTextFechaNacimiento);
+        editTextTelPrincipal = (EditText) findViewById(R.id.editTextTelPrincipal);
+        editTextTelSecundario = (EditText) findViewById(R.id.editTextTelSecundario);
+        editTextDireccion = (EditText) findViewById(R.id.editTextDireccion);
+        editTextNumero = (EditText) findViewById(R.id.editTextNumero);
+        editTextDepartamento = (EditText) findViewById(R.id.editTextDepartamento);
+        editTextPiso = (EditText) findViewById(R.id.editTextPiso);
+        editTextMail = (EditText) findViewById(R.id.editTextMail);
+
+        spinnerTipoDocumento= (Spinner) findViewById(R.id.spinnerTipoDocumento);
+        spinnerSexo= (Spinner) findViewById(R.id.spinnerSexo);
+        spinnerEstadoCivil= (Spinner) findViewById(R.id.spinnerEstadoCivil);
+
 
         btnSave.setOnClickListener(this);
-        btnDelete.setOnClickListener(this);
         btnClose.setOnClickListener(this);
 
 
@@ -54,8 +82,9 @@ public class PersonaDetalle extends ActionBarActivity implements android.view.Vi
         Persona persona = new Persona();
         persona = repo.getPersonaById(_Persona_Id);
 
-        editTextDomicilio.setText(String.valueOf(persona.getDomicilio()));
-        editTextRazonSocial.setText(persona.getRazonSocial());
+
+        editTextApellido.setText(persona.getApellido());
+        editTextNombre.setText(persona.getNombre());
         editTextDocumento.setText(persona.getDocumento());
     }
 
@@ -84,9 +113,23 @@ public class PersonaDetalle extends ActionBarActivity implements android.view.Vi
         if (view == findViewById(R.id.btnSave)){
             PersonaRepository repo = new PersonaRepository(this);
             Persona persona = new Persona();
-            persona.setDomicilio(editTextDomicilio.getText().toString());
+
+            persona.setNombre(editTextNombre.getText().toString());
+            persona.setApellido(editTextApellido.getText().toString());
             persona.setDocumento(editTextDocumento.getText().toString());
-            persona.setRazonSocial(editTextRazonSocial.getText().toString());
+            persona.setCuit(editTextCuit.getText().toString());
+            persona.setFechaNacimiento(editTextFechaNacimiento.getText().toString());
+            persona.setTelPrincipal(editTextTelPrincipal.getText().toString());
+            persona.setTelSecundario(editTextTelSecundario.getText().toString());
+            persona.setTelSecundario(editTextTelSecundario.getText().toString());
+            persona.setDireccion(editTextDireccion.getText().toString());
+            persona.setNumero(editTextNumero.getText().toString());
+            persona.setDepartamento(editTextDepartamento.getText().toString());
+            persona.setEmail(editTextMail.getText().toString());
+            persona.setPiso(editTextPiso.getText().toString());
+            //persona.setCreadoPor();
+
+
             persona.setId(_Persona_Id);
 
             if (_Persona_Id==0){

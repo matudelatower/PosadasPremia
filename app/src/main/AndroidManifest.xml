@@ -27,10 +27,10 @@
         <activity
             android:name=".RegistroActivity"
             android:label="@string/title_activity_registro"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".ListadoRegistroActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.delatowebs.posadaspremia.MainActivity" />
+                android:value="com.delatowebs.posadaspremia.ListadoRegistroActivity" />
         </activity>
         <activity
             android:name=".PersonaDetalle"
@@ -47,6 +47,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.delatowebs.posadaspremia.AdminActivity" />
+        </activity>
+        <activity
+            android:name=".ListadoRegistroActivity"
+            android:label="@string/title_activity_listado_registro"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.delatowebs.posadaspremia.MainActivity" />
         </activity>
     </application>
 
