@@ -1,343 +1,367 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.delatowebs.posadaspremia.RegistroActivity">
+    tools:context=".MainActivity" >
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buscar Por"
-        android:id="@+id/textView1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Apellidos*"
-        android:id="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/textView1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombres*"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.delatowebs.posadaspremia.RegistroActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo y Numero*"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar Por"
+            android:id="@+id/textView1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CUIT"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellidos*"
+            android:id="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/textView1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha Nacimiento*"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombres*"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sexo*"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/textView7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo y Numero*"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Estado Civil"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email*"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CUIT"
+            android:id="@+id/textView6"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Telefono Principal*"
-        android:id="@+id/textView11"
-        android:layout_below="@+id/textView10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha Nacimiento*"
+            android:id="@+id/textView7"
+            android:layout_below="@+id/textView6"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Telefono Secundario"
-        android:id="@+id/textView12"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexo*"
+            android:id="@+id/textView8"
+            android:layout_below="@+id/textView7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Direccion"
-        android:id="@+id/textView13"
-        android:layout_below="@+id/textView12"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado Civil"
+            android:id="@+id/textView9"
+            android:layout_below="@+id/textView8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email*"
+            android:id="@+id/textView10"
+            android:layout_below="@+id/textView9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Numero"
-        android:id="@+id/textView14"
-        android:layout_below="@+id/textView13"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefono Principal*"
+            android:id="@+id/textView11"
+            android:layout_below="@+id/textView10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Departamento"
-        android:id="@+id/textView15"
-        android:layout_below="@+id/textView14"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefono Secundario"
+            android:id="@+id/textView12"
+            android:layout_below="@+id/textView11"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Piso"
-        android:id="@+id/textView16"
-        android:layout_below="@+id/textView15"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Direccion"
+            android:id="@+id/textView13"
+            android:layout_below="@+id/textView12"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <Spinner
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numero"
+            android:id="@+id/textView14"
+            android:layout_below="@+id/textView13"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerTipoBusqueda"
-        android:spinnerMode="dialog"
-        android:entries="@array/busqueda_registro"
-        android:layout_width="match_parent"
-        android:layout_toLeftOf="@+id/editTextTipoBusqueda"
-        android:layout_toRightOf="@+id/textView12"
-        android:layout_toEndOf="@+id/textView12"
-        android:layout_alignBottom="@+id/textView1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departamento"
+            android:id="@+id/textView15"
+            android:layout_below="@+id/textView14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editTextTipoBusqueda"
-        android:layout_alignTop="@+id/spinnerTipoBusqueda"
-        android:layout_toLeftOf="@+id/buttonBuscarContribuyente"
-        android:layout_toStartOf="@+id/buttonBuscarContribuyente" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Piso"
+            android:id="@+id/textView16"
+            android:layout_below="@+id/textView15"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="29dp" />
 
+        <Spinner
+
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerTipoBusqueda"
+            android:spinnerMode="dialog"
+            android:entries="@array/busqueda_registro"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@+id/editTextTipoBusqueda"
+            android:layout_toRightOf="@+id/textView12"
+            android:layout_toEndOf="@+id/textView12"
+            android:layout_alignBottom="@+id/textView1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextTipoBusqueda"
+            android:layout_alignTop="@+id/spinnerTipoBusqueda"
+            android:layout_toLeftOf="@+id/buttonBuscarContribuyente"
+            android:layout_toStartOf="@+id/buttonBuscarContribuyente" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:id="@+id/buttonBuscarContribuyente"
+            android:layout_alignTop="@+id/editTextTipoBusqueda"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextApellido"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignLeft="@+id/spinnerTipoBusqueda"
+            android:layout_alignStart="@+id/spinnerTipoBusqueda" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextNombre"
+            android:layout_below="@+id/editTextApellido"
+            android:layout_alignLeft="@+id/editTextApellido"
+            android:layout_alignStart="@+id/editTextApellido" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerTipoDocumento"
+            android:layout_below="@+id/editTextNombre"
+            android:layout_alignLeft="@+id/editTextNombre"
+            android:layout_alignStart="@+id/editTextNombre"
+            android:layout_toLeftOf="@+id/editTextDocumento"
+            android:layout_alignBottom="@+id/textView5" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextDocumento"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_toRightOf="@+id/spinnerTipoBusqueda"
+            android:layout_toEndOf="@+id/spinnerTipoBusqueda" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextCuit"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignLeft="@+id/spinnerTipoDocumento"
+            android:layout_alignStart="@+id/spinnerTipoDocumento"
+            android:layout_alignRight="@+id/editTextNombre"
+            android:layout_alignEnd="@+id/editTextNombre" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editTextFechaNacimiento"
+            android:layout_alignBottom="@+id/textView7"
+            android:layout_alignLeft="@+id/editTextCuit"
+            android:layout_alignStart="@+id/editTextCuit" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerSexo"
+            android:layout_above="@+id/textView9"
+            android:layout_alignLeft="@+id/editTextFechaNacimiento"
+            android:layout_alignStart="@+id/editTextFechaNacimiento"
+            android:layout_below="@+id/editTextFechaNacimiento" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerEstadoCivil"
+            android:layout_above="@+id/textView10"
+            android:layout_alignLeft="@+id/spinnerSexo"
+            android:layout_alignStart="@+id/spinnerSexo"
+            android:layout_below="@+id/spinnerSexo" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editTextMail"
+            android:layout_above="@+id/textView11"
+            android:layout_alignLeft="@+id/spinnerEstadoCivil"
+            android:layout_alignStart="@+id/spinnerEstadoCivil" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/editTextTelPrincipal"
+            android:layout_above="@+id/textView12"
+            android:layout_alignLeft="@+id/editTextMail"
+            android:layout_alignStart="@+id/editTextMail" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/editTextTelSecundario"
+            android:layout_alignBottom="@+id/textView12"
+            android:layout_alignLeft="@+id/editTextTelPrincipal"
+            android:layout_alignStart="@+id/editTextTelPrincipal" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextDireccion"
+            android:layout_above="@+id/textView14"
+            android:layout_alignLeft="@+id/editTextTelSecundario"
+            android:layout_alignStart="@+id/editTextTelSecundario"
+            android:layout_alignRight="@+id/editTextTelSecundario"
+            android:layout_alignEnd="@+id/editTextTelSecundario" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextNumero"
+            android:layout_alignBottom="@+id/textView14"
+            android:layout_alignLeft="@+id/editTextDireccion"
+            android:layout_alignStart="@+id/editTextDireccion"
+            android:layout_alignRight="@+id/editTextDireccion"
+            android:layout_alignEnd="@+id/editTextDireccion" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextDepartamento"
+            android:layout_above="@+id/textView16"
+            android:layout_alignLeft="@+id/editTextNumero"
+            android:layout_alignStart="@+id/editTextNumero"
+            android:layout_alignRight="@+id/editTextNumero"
+            android:layout_alignEnd="@+id/editTextNumero" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextPiso"
+            android:layout_alignBottom="@+id/textView16"
+            android:layout_toRightOf="@+id/textView12"
+            android:layout_alignRight="@+id/editTextDepartamento"
+            android:layout_alignEnd="@+id/editTextDepartamento" />
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+    </ScrollView>
     <Button
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:id="@+id/buttonBuscarContribuyente"
-        android:layout_alignTop="@+id/editTextTipoBusqueda"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editTextApellido"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/spinnerTipoBusqueda"
-        android:layout_alignStart="@+id/spinnerTipoBusqueda" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editTextNombre"
-        android:layout_below="@+id/editTextApellido"
-        android:layout_alignLeft="@+id/editTextApellido"
-        android:layout_alignStart="@+id/editTextApellido" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerTipoDocumento"
-        android:layout_below="@+id/editTextNombre"
-        android:layout_alignLeft="@+id/editTextNombre"
-        android:layout_alignStart="@+id/editTextNombre"
-        android:layout_toLeftOf="@+id/editTextDocumento"
-        android:layout_alignBottom="@+id/textView5" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editTextDocumento"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_toRightOf="@+id/spinnerTipoBusqueda"
-        android:layout_toEndOf="@+id/spinnerTipoBusqueda" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextCuit"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/spinnerTipoDocumento"
-        android:layout_alignStart="@+id/spinnerTipoDocumento"
-        android:layout_alignRight="@+id/editTextNombre"
-        android:layout_alignEnd="@+id/editTextNombre" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/editTextFechaNacimiento"
-        android:layout_alignBottom="@+id/textView7"
-        android:layout_alignLeft="@+id/editTextCuit"
-        android:layout_alignStart="@+id/editTextCuit" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerSexo"
-        android:layout_above="@+id/textView9"
-        android:layout_alignLeft="@+id/editTextFechaNacimiento"
-        android:layout_alignStart="@+id/editTextFechaNacimiento"
-        android:layout_below="@+id/editTextFechaNacimiento" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerEstadoCivil"
-        android:layout_above="@+id/textView10"
-        android:layout_alignLeft="@+id/spinnerSexo"
-        android:layout_alignStart="@+id/spinnerSexo"
-        android:layout_below="@+id/spinnerSexo" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editTextMail"
-        android:layout_above="@+id/textView11"
-        android:layout_alignLeft="@+id/spinnerEstadoCivil"
-        android:layout_alignStart="@+id/spinnerEstadoCivil" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/editTextTelPrincipal"
-        android:layout_above="@+id/textView12"
-        android:layout_alignLeft="@+id/editTextMail"
-        android:layout_alignStart="@+id/editTextMail" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/editTextTelSecundario"
-        android:layout_alignBottom="@+id/textView12"
-        android:layout_alignLeft="@+id/editTextTelPrincipal"
-        android:layout_alignStart="@+id/editTextTelPrincipal" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextDireccion"
-        android:layout_above="@+id/textView14"
-        android:layout_alignLeft="@+id/editTextTelSecundario"
-        android:layout_alignStart="@+id/editTextTelSecundario"
-        android:layout_alignRight="@+id/editTextTelSecundario"
-        android:layout_alignEnd="@+id/editTextTelSecundario" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextNumero"
-        android:layout_alignBottom="@+id/textView14"
-        android:layout_alignLeft="@+id/editTextDireccion"
-        android:layout_alignStart="@+id/editTextDireccion"
-        android:layout_alignRight="@+id/editTextDireccion"
-        android:layout_alignEnd="@+id/editTextDireccion" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextDepartamento"
-        android:layout_above="@+id/textView16"
-        android:layout_alignLeft="@+id/editTextNumero"
-        android:layout_alignStart="@+id/editTextNumero"
-        android:layout_alignRight="@+id/editTextNumero"
-        android:layout_alignEnd="@+id/editTextNumero" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextPiso"
-        android:layout_alignBottom="@+id/textView16"
-        android:layout_toRightOf="@+id/textView12"
-        android:layout_alignRight="@+id/editTextDepartamento"
-        android:layout_alignEnd="@+id/editTextDepartamento" />
-    
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="GUARDAR"
         android:id="@+id/btnSave"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/btnClose" />
@@ -345,12 +369,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Close"
+        android:text="CERRAR"
         android:id="@+id/btnClose"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-    
-
 </RelativeLayout>
+
+
+
+
