@@ -53,22 +53,22 @@ public class PersonaDetalle extends ActionBarActivity implements android.view.Vi
         btnSave = (Button) findViewById(R.id.btnSave);
         btnClose = (Button) findViewById(R.id.btnClose);
 
-        editTextApellido = (EditText) findViewById(R.id.editTextApellido);
-        editTextNombre = (EditText) findViewById(R.id.editTextNombre);
-        editTextDocumento = (EditText) findViewById(R.id.editTextDocumento);
-        editTextCuit = (EditText) findViewById(R.id.editTextCuit);
-        editTextFechaNacimiento = (EditText) findViewById(R.id.editTextFechaNacimiento);
-        editTextTelPrincipal = (EditText) findViewById(R.id.editTextTelPrincipal);
-        editTextTelSecundario = (EditText) findViewById(R.id.editTextTelSecundario);
-        editTextDireccion = (EditText) findViewById(R.id.editTextDireccion);
-        editTextNumero = (EditText) findViewById(R.id.editTextNumero);
-        editTextDepartamento = (EditText) findViewById(R.id.editTextDepartamento);
-        editTextPiso = (EditText) findViewById(R.id.editTextPiso);
-        editTextMail = (EditText) findViewById(R.id.editTextMail);
-
-        spinnerTipoDocumento= (Spinner) findViewById(R.id.spinnerTipoDocumento);
-        spinnerSexo= (Spinner) findViewById(R.id.spinnerSexo);
-        spinnerEstadoCivil= (Spinner) findViewById(R.id.spinnerEstadoCivil);
+//        editTextApellido = (EditText) findViewById(R.id.editTextApellido);
+//        editTextNombre = (EditText) findViewById(R.id.editTextNombre);
+//        editTextDocumento = (EditText) findViewById(R.id.editTextDocumento);
+//        editTextCuit = (EditText) findViewById(R.id.editTextCuit);
+//        editTextFechaNacimiento = (EditText) findViewById(R.id.editTextFechaNacimiento);
+//        editTextTelPrincipal = (EditText) findViewById(R.id.editTextTelPrincipal);
+//        editTextTelSecundario = (EditText) findViewById(R.id.editTextTelSecundario);
+//        editTextDireccion = (EditText) findViewById(R.id.editTextDireccion);
+//        editTextNumero = (EditText) findViewById(R.id.editTextNumero);
+//        editTextDepartamento = (EditText) findViewById(R.id.editTextDepartamento);
+//        editTextPiso = (EditText) findViewById(R.id.editTextPiso);
+//        editTextMail = (EditText) findViewById(R.id.editTextMail);
+//
+//        spinnerTipoDocumento= (Spinner) findViewById(R.id.spinnerTipoDocumento);
+//        spinnerSexo= (Spinner) findViewById(R.id.spinnerSexo);
+//        spinnerEstadoCivil= (Spinner) findViewById(R.id.spinnerEstadoCivil);
 
 
         btnSave.setOnClickListener(this);

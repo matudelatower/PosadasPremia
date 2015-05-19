@@ -4,17 +4,15 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-
+/**
+ * Created by matias on 22/04/15.
+ */
 public class DBHelper  extends SQLiteOpenHelper {
     //version number to upgrade database version
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
 
     // Database Name
-    private static final String DATABASE_NAME = "registro.db";
+    private static final String DATABASE_NAME = "cuestionario.db";
 
     public DBHelper(Context context ) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,7 +23,11 @@ public class DBHelper  extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String CREATE_TABLE_STUDENT = "CREATE TABLE " + Persona.TABLE  + "("
+        String CREATE_TABLE_TABLET = "CREATE TABLE " + Tablet.TABLE  + "("
+                + Tablet.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + Tablet.KEY_ID_TABLET + " TEXT )";
+
+        String CREATE_TABLE_PERSONA = "CREATE TABLE " + Persona.TABLE  + "("
                 + Persona.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + Persona.KEY_DOCUMENTO + " TEXT, "
                 + Persona.KEY_CUIT + " TEXT, "
@@ -46,7 +48,8 @@ public class DBHelper  extends SQLiteOpenHelper {
                 + Persona.KEY_CREADO_POR + " TEXT,"
                 + Persona.KEY_ACTUALIZADO + " TEXT )";
 
-        db.execSQL(CREATE_TABLE_STUDENT);
+        db.execSQL(CREATE_TABLE_TABLET);
+        db.execSQL(CREATE_TABLE_PERSONA);
 
     }
 
@@ -54,6 +57,7 @@ public class DBHelper  extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed, all data will be gone
+        db.execSQL("DROP TABLE IF EXISTS " + Tablet.TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + Persona.TABLE);
 
         // Create tables again

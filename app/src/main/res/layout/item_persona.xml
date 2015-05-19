@@ -1,21 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/persona_Id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/nombrePersona"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
 
-</LinearLayout>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:onClick="EditarEncuesta">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Id: "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_toLeftOf="@+id/registroId"
+                android:layout_toStartOf="@+id/registroId"
+                android:layout_above="@+id/textView2"
+                android:gravity="center_vertical"
+                android:layout_gravity="center|left" />
+
+            <TextView
+                android:id="@+id/registroId"
+                android:layout_width="460dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dip"
+                android:paddingTop="6dip"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Completo:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_below="@+id/creadoPor"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/creadoPor"
+                android:layout_toStartOf="@+id/creadoPor"
+                android:gravity="center_vertical"
+                android:layout_gravity="center|left"
+                android:layout_alignBottom="@+id/nombre_completo" />
+
+            <TextView
+                android:id="@+id/nombre_completo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dip"
+                android:paddingTop="6dip"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/creadoPor"
+                android:layout_alignLeft="@+id/creadoPor"
+                android:layout_alignStart="@+id/creadoPor" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Documento:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="false"
+                android:layout_below="@+id/registroId"
+                android:layout_alignParentTop="false"
+                android:layout_gravity="center|left" />
+
+            <TextView
+                android:id="@+id/documento"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dip"
+                android:paddingTop="6dip"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_alignTop="@+id/textView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_toEndOf="@+id/textView2" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Creado Por: "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="false"
+                android:layout_below="@+id/registroId"
+                android:layout_alignParentTop="false"
+                android:layout_gravity="center|left" />
+
+            <TextView
+                android:id="@+id/creadoPor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dip"
+                android:paddingTop="6dip"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_alignTop="@+id/textView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_toEndOf="@+id/textView2" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

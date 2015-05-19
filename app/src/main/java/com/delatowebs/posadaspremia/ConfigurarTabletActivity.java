@@ -1,28 +1,29 @@
 package com.delatowebs.posadaspremia;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class ConfigurarTabletActivity extends ActionBarActivity {
+
+    private int _Tablet_Id=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_configurar_tablet);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_configurar_tablet, menu);
         return true;
     }
 
@@ -41,30 +42,28 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void ingresarMessage(View view){
-
-        EditText dniTxt= (EditText) findViewById(R.id.txt_dni);
-        String dniStr= dniTxt.getText().toString();
-
-        Class activity;
-
-        String adminCode = getResources().getString(R.string.admin_code);
+    public void guardarConfiguracion(View view){
+        EditText idTabletTxt= (EditText) findViewById(R.id.txt_id_tablet);
+        String idTablet= idTabletTxt.getText().toString();
 
 
+        TabletRepository repo = new TabletRepository(this);
+        Tablet tablet = new Tablet();
 
-        if (dniStr.equals(adminCode)){
-            activity=AdminActivity.class;
+        tablet.setIdTablet(Integer.parseInt(idTablet));
+
+        if (repo.getFirstTablet()==0){
+            _Tablet_Id = repo.insert(tablet);
+
+            Toast.makeText(this, "Identificador de Tablet: "+_Tablet_Id, Toast.LENGTH_SHORT).show();
         }else{
-            TabletRepository repo = new TabletRepository(this);
-            if (repo.getFirstTablet()==0){
-                Toast.makeText(this, "Primero debe configurar la tablet", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            activity=ListadoRegistroActivity.class;
+            tablet.setId(repo.getFirstTablet());
+            repo.update(tablet);
+            Toast.makeText(this,"Id Tablet Actualizada",Toast.LENGTH_SHORT).show();
         }
 
-        Intent intent= new Intent(this, activity);
-        intent.putExtra("numeroDni",dniStr);
-        startActivity(intent);
+        finish();
+
+
     }
 }

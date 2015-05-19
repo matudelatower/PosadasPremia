@@ -1,13 +1,28 @@
 <resources>
     <string name="app_name">Registro Usuarios Offline</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Listado</string>
-    <string name="admin_code">111</string>
-    <string name="title_activity_admin">Administracion</string>
     <string name="title_activity_registro">Registro de Usuario</string>
     <string name="title_activity_persona_detalle">PersonaDetalle</string>
     <string name="title_activity_ver_persona">ver_persona</string>
     <string name="title_activity_listado_registro">ListadoRegistro</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="action_configuracion_inicial">Configurar</string>
+    <string name="action_importar_padron">Importar Padron</string>
+    <string name="action_ver_encuestas_cargadas">Ver Encuestas Cargadas</string>
+    <string name="admin_code">111</string>
+    <string name="title_activity_cuestionario">Cuestionario</string>
+    <string name="title_activity_admin">Administrador</string>
+    <string name="title_activity_configurar_tablet">Configurar Tablet</string>
+    <string name="text_btn_guardar">GUARDAR</string>
+    <string name="text_btn_cerrar">CERRAR</string>
+    <string name="text_btn_importar_padron">Importar Padron</string>
+    <string name="title_activity_importar_padron">Importar Padron</string>
+    <string name="title_activity_busqueda_padron">Busqueda Padron</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_listado_encuestas">Listado Encuestas</string>
 
 </resources>

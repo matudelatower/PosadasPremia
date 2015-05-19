@@ -293,11 +293,108 @@ public class PersonaRepository {
         return persona_Id;
     }
 
+    public ArrayList<HashMap<String, String>> getAllPersonas() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery = "SELECT  " +
+                Persona.KEY_ID + "," +
+                Persona.KEY_DOCUMENTO + "," +
+                Persona.KEY_CUIT + "," +
+                Persona.KEY_APELLIDO + "," +
+                Persona.KEY_NOMBRE + "," +
+                Persona.KEY_TIPO_DOC + "," +
+                Persona.KEY_FECHA_NACIMIENTO + "," +
+                Persona.KEY_SEXO + "," +
+                Persona.KEY_ESTADO_CIVIL + "," +
+                Persona.KEY_EMAIL + "," +
+                Persona.KEY_TEL_PRINCIPAL + "," +
+                Persona.KEY_TEL_SECUNDARIO + "," +
+                Persona.KEY_DIRECCION + "," +
+                Persona.KEY_NUMERO + "," +
+                Persona.KEY_DEPARTAMENTO + "," +
+                Persona.KEY_PISO + "," +
+                Persona.KEY_CUESTIONARIO + "," +
+                Persona.KEY_CREADO_POR + "," +
+                Persona.KEY_ACTUALIZADO +
+                " FROM " + Persona.TABLE;
 
 
 
+        ArrayList<HashMap<String, String>> personaList = new ArrayList<HashMap<String, String>>();
 
 
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+
+        if (cursor.moveToFirst()) {
+            do {
+                HashMap<String, String> persona = new HashMap<String, String>();
+                persona.put("id", cursor.getString(cursor.getColumnIndex(Persona.KEY_ID)));
+                persona.put("nombre", cursor.getString(cursor.getColumnIndex(Persona.KEY_NOMBRE)));
+                persona.put("apellido", cursor.getString(cursor.getColumnIndex(Persona.KEY_APELLIDO)));
+                persona.put("creadoPor", cursor.getString(cursor.getColumnIndex(Persona.KEY_CREADO_POR)));
+                persona.put("documento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
+                personaList.add(persona);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return personaList;
+
+    }
+
+
+
+    public ArrayList<HashMap<String, String>> getPersonaListPorEncuestador(String dniStr) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery = "SELECT  " +
+                Persona.KEY_ID + "," +
+                Persona.KEY_DOCUMENTO + "," +
+                Persona.KEY_CUIT + "," +
+                Persona.KEY_APELLIDO + "," +
+                Persona.KEY_NOMBRE + "," +
+                Persona.KEY_TIPO_DOC + "," +
+                Persona.KEY_FECHA_NACIMIENTO + "," +
+                Persona.KEY_SEXO + "," +
+                Persona.KEY_ESTADO_CIVIL + "," +
+                Persona.KEY_EMAIL + "," +
+                Persona.KEY_TEL_PRINCIPAL + "," +
+                Persona.KEY_TEL_SECUNDARIO + "," +
+                Persona.KEY_DIRECCION + "," +
+                Persona.KEY_NUMERO + "," +
+                Persona.KEY_DEPARTAMENTO + "," +
+                Persona.KEY_PISO + "," +
+                Persona.KEY_CUESTIONARIO + "," +
+                Persona.KEY_CREADO_POR + "," +
+                Persona.KEY_ACTUALIZADO +
+                " FROM " + Persona.TABLE + " WHERE " + Persona.KEY_CREADO_POR + " = '" + dniStr + "'";
+
+
+        //Encuesta persona = new Encuesta();
+        ArrayList<HashMap<String, String>> personaList = new ArrayList<HashMap<String, String>>();
+
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+
+        if (cursor.moveToFirst()) {
+            do {
+                HashMap<String, String> persona = new HashMap<String, String>();
+                persona.put("id", cursor.getString(cursor.getColumnIndex(Persona.KEY_ID)));
+                persona.put("nombre_completo", cursor.getString(cursor.getColumnIndex(Persona.KEY_NOMBRE)) + " "+cursor.getString(cursor.getColumnIndex(Persona.KEY_APELLIDO)));
+                persona.put("creadoPor", cursor.getString(cursor.getColumnIndex(Persona.KEY_CREADO_POR)));
+                persona.put("documento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
+                personaList.add(persona);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return personaList;
+
+    }
 
 
 

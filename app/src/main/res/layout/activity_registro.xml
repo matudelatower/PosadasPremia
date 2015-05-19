@@ -7,373 +7,752 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
-    <ScrollView 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false">
 
 
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context="com.delatowebs.posadaspremia.RegistroActivity">
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Buscar Por"
-            android:id="@+id/textView1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="30dp" />
+            android:orientation="vertical"
+            android:id="@+id/encuestaLayout">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apellidos*"
-            android:id="@+id/textView3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp"
-            android:layout_below="@+id/textView1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombres*"
-            android:id="@+id/textView4"
-            android:layout_below="@+id/textView3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nro de cuestionario"
+                android:id="@+id/txtNroCuestionario" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tipo y Numero*"
-            android:id="@+id/textView5"
-            android:layout_below="@+id/textView4"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <EditText
+                android:id="@+id/nroCuestionario"
+                android:tag="nroCuestionario"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:enabled="false" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CUIT"
-            android:id="@+id/textView6"
-            android:layout_below="@+id/textView5"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fecha Nacimiento*"
-            android:id="@+id/textView7"
-            android:layout_below="@+id/textView6"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nro de Brigadista"
+                android:id="@+id/txtNroBrigadista"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sexo*"
-            android:id="@+id/textView8"
-            android:layout_below="@+id/textView7"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <EditText
+                android:id="@+id/nroBrigadista"
+                android:tag="nroBrigadista"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estado Civil"
-            android:id="@+id/textView9"
-            android:layout_below="@+id/textView8"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email*"
-            android:id="@+id/textView10"
-            android:layout_below="@+id/textView9"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Telefono Principal*"
-            android:id="@+id/textView11"
-            android:layout_below="@+id/textView10"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nro de Partida"
+                android:id="@+id/txtNroPartida"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Telefono Secundario"
-            android:id="@+id/textView12"
-            android:layout_below="@+id/textView11"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <EditText
+                android:id="@+id/nroPartida"
+                android:tag="nroPartida"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Direccion"
-            android:id="@+id/textView13"
-            android:layout_below="@+id/textView12"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Numero"
-            android:id="@+id/textView14"
-            android:layout_below="@+id/textView13"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dom de la Entrevista"
+                android:id="@+id/txtDomEntrevista"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Departamento"
-            android:id="@+id/textView15"
-            android:layout_below="@+id/textView14"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
+            <EditText
+                android:id="@+id/domicilioEntrevista"
+                android:tag="domicilioEntrevista"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Piso"
-            android:id="@+id/textView16"
-            android:layout_below="@+id/textView15"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="29dp" />
 
-        <Spinner
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manzana"
+                android:id="@+id/txtManzana"/>
 
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerTipoBusqueda"
-            android:spinnerMode="dialog"
-            android:entries="@array/busqueda_registro"
-            android:layout_width="match_parent"
-            android:layout_toLeftOf="@+id/editTextTipoBusqueda"
-            android:layout_toRightOf="@+id/textView12"
-            android:layout_toEndOf="@+id/textView12"
-            android:layout_alignBottom="@+id/textView1" />
+            <EditText
+                android:id="@+id/manzana"
+                android:tag="manzana"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editTextTipoBusqueda"
-            android:layout_alignTop="@+id/spinnerTipoBusqueda"
-            android:layout_toLeftOf="@+id/buttonBuscarContribuyente"
-            android:layout_toStartOf="@+id/buttonBuscarContribuyente" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Buscar"
-            android:id="@+id/buttonBuscarContribuyente"
-            android:layout_alignTop="@+id/editTextTipoBusqueda"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chacra"
+                android:id="@+id/txtChacra"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editTextApellido"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_alignLeft="@+id/spinnerTipoBusqueda"
-            android:layout_alignStart="@+id/spinnerTipoBusqueda" />
+            <EditText
+                android:id="@+id/chacra"
+                android:tag="chacra"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editTextNombre"
-            android:layout_below="@+id/editTextApellido"
-            android:layout_alignLeft="@+id/editTextApellido"
-            android:layout_alignStart="@+id/editTextApellido" />
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerTipoDocumento"
-            android:layout_below="@+id/editTextNombre"
-            android:layout_alignLeft="@+id/editTextNombre"
-            android:layout_alignStart="@+id/editTextNombre"
-            android:layout_toLeftOf="@+id/editTextDocumento"
-            android:layout_alignBottom="@+id/textView5" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barrio"
+                android:id="@+id/txtBarrio"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editTextDocumento"
-            android:layout_alignBottom="@+id/textView5"
-            android:layout_toRightOf="@+id/spinnerTipoBusqueda"
-            android:layout_toEndOf="@+id/spinnerTipoBusqueda" />
+            <EditText
+                android:id="@+id/barrio"
+                android:tag="barrio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextCuit"
-            android:layout_alignBottom="@+id/textView6"
-            android:layout_alignLeft="@+id/spinnerTipoDocumento"
-            android:layout_alignStart="@+id/spinnerTipoDocumento"
-            android:layout_alignRight="@+id/editTextNombre"
-            android:layout_alignEnd="@+id/editTextNombre" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:id="@+id/editTextFechaNacimiento"
-            android:layout_alignBottom="@+id/textView7"
-            android:layout_alignLeft="@+id/editTextCuit"
-            android:layout_alignStart="@+id/editTextCuit" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoría o Sección"
+                android:id="@+id/txtCategoriaSeccion"/>
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerSexo"
-            android:layout_above="@+id/textView9"
-            android:layout_alignLeft="@+id/editTextFechaNacimiento"
-            android:layout_alignStart="@+id/editTextFechaNacimiento"
-            android:layout_below="@+id/editTextFechaNacimiento" />
+            <EditText
+                android:id="@+id/categoriaSeccion"
+                android:tag="categoriaSeccion"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerEstadoCivil"
-            android:layout_above="@+id/textView10"
-            android:layout_alignLeft="@+id/spinnerSexo"
-            android:layout_alignStart="@+id/spinnerSexo"
-            android:layout_below="@+id/spinnerSexo" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Vive en este domicilio?"
+                android:id="@+id/txtViveDomicilio"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/editTextMail"
-            android:layout_above="@+id/textView11"
-            android:layout_alignLeft="@+id/spinnerEstadoCivil"
-            android:layout_alignStart="@+id/spinnerEstadoCivil" />
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/viveDomicilio">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"
-            android:id="@+id/editTextTelPrincipal"
-            android:layout_above="@+id/textView12"
-            android:layout_alignLeft="@+id/editTextMail"
-            android:layout_alignStart="@+id/editTextMail" />
+                <RadioButton
+                    android:id="@+id/viveDomicilioSi"
+                    android:tag="viveDomicilioSi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:checked="false"
+                    android:text="Si" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"
-            android:id="@+id/editTextTelSecundario"
-            android:layout_alignBottom="@+id/textView12"
-            android:layout_alignLeft="@+id/editTextTelPrincipal"
-            android:layout_alignStart="@+id/editTextTelPrincipal" />
+                <RadioButton
+                    android:id="@+id/viveDomicilioNo"
+                    android:tag="viveDomicilioNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="No" />
+            </RadioGroup>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextDireccion"
-            android:layout_above="@+id/textView14"
-            android:layout_alignLeft="@+id/editTextTelSecundario"
-            android:layout_alignStart="@+id/editTextTelSecundario"
-            android:layout_alignRight="@+id/editTextTelSecundario"
-            android:layout_alignEnd="@+id/editTextTelSecundario" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Régimen de tenencia de vivienda"
+                android:id="@+id/txtRegimenTenenciaVivienda"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextNumero"
-            android:layout_alignBottom="@+id/textView14"
-            android:layout_alignLeft="@+id/editTextDireccion"
-            android:layout_alignStart="@+id/editTextDireccion"
-            android:layout_alignRight="@+id/editTextDireccion"
-            android:layout_alignEnd="@+id/editTextDireccion" />
+            <Spinner
+                android:id="@+id/regimenTenenciaVivienda"
+                android:tag="regimenTenenciaVivienda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/regimen_tenencia_vivienda"
+                android:spinnerMode="dialog"
+                />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextDepartamento"
-            android:layout_above="@+id/textView16"
-            android:layout_alignLeft="@+id/editTextNumero"
-            android:layout_alignStart="@+id/editTextNumero"
-            android:layout_alignRight="@+id/editTextNumero"
-            android:layout_alignEnd="@+id/editTextNumero" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Género"
+                android:id="@+id/txtGenero"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextPiso"
-            android:layout_alignBottom="@+id/textView16"
-            android:layout_toRightOf="@+id/textView12"
-            android:layout_alignRight="@+id/editTextDepartamento"
-            android:layout_alignEnd="@+id/editTextDepartamento" />
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/rgGenero">
+
+                <RadioButton
+                    android:id="@+id/generoVaron"
+                    android:tag="generoVaron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:checked="false"
+                    android:text="Varón" />
+
+                <RadioButton
+                    android:id="@+id/generoMujer"
+                    android:tag="generoMujer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Mujer" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿En qué fecha nació?"
+                android:id="@+id/txtFechaNacimiento"/>
+
+            <EditText
+                android:id="@+id/fechaNacimiento"
+                android:tag="fechaNacimiento"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:onClick="datePickerDialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Número de Dni"
+                android:id="@+id/txtNroDni"/>
+
+            <EditText
+                android:id="@+id/nroDni"
+                android:tag="nroDni"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/miembrosContainer">
 
 
 
+            </LinearLayout>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar Nuevo Miembro"
+                android:id="@+id/btnNuevoMiembro"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:onClick="registrarNuevoMiembro"
+                android:visibility="visible" />
 
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Cuáles son, según su opinión, los tres principales problemas que debería atender prioritariamente el gobierno municipal?"
+                android:id="@+id/txtProblemasAtencionGobiernoMunicipal"/>
+
+            <EditText
+                android:id="@+id/problemasAtencionGobiernoMunicipal1"
+                android:tag="problemasAtencionGobiernoMunicipal1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/problemasAtencionGobiernoMunicipal2"
+                android:tag="problemasAtencionGobiernoMunicipal2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/problemasAtencionGobiernoMunicipal3"
+                android:tag="problemasAtencionGobiernoMunicipal3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/mediosTransporteContainer">
 
 
 
+            </LinearLayout>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar Nuevo Medio de Transporte"
+                android:id="@+id/btnNuevoMedio"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:onClick="registrarNuevoMedioTransporte"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Dónde realiza mayoritariamente sus compras diarias?"
+                android:id="@+id/txtComprasDiarias"/>
+
+            <Spinner
+                android:id="@+id/comprasDiarias"
+                android:tag="comprasDiarias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/compras_diarias"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Dónde realiza las compras excepcionales? (indumentaria / calzado / regalos)"
+                android:id="@+id/txtComprasExcepcionales"/>
+
+            <Spinner
+                android:id="@+id/comprasExcepcionales"
+                android:tag="comprasExcepcionales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/compras_excepcionales"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿cuántos TV hay en el hogar?"
+                android:id="@+id/txtTvsHogar"/>
+
+            <EditText
+                android:id="@+id/tvsHogar"
+                android:tag="tvsHogar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Tiene radio?"
+                android:id="@+id/txtRadio"/>
+
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/rgRadio">
+
+                <RadioButton
+                    android:id="@+id/radioSi"
+                    android:tag="radioSi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:checked="false"
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/radioNo"
+                    android:tag="radioNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="No" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Cuántos dispositivos electrónicos inteligentes hay en su hogar? (computadoras de escritorio / tabletas / notebooks / netbooks)"
+                android:id="@+id/txtDispositivosElectronicos"/>
+
+            <EditText
+                android:id="@+id/dispositivosElectronicos"
+                android:tag="dispositivosElectronicos"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Cuántos teléfonos móviles?"
+                android:id="@+id/txtTelefonosMoviles"/>
+
+            <EditText
+                android:id="@+id/telefonosMoviles"
+                android:tag="telefonosMoviles"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿De qué modo se informa prioritariamente de lo que ocurre en Posadas?"
+                android:id="@+id/txtModoInformacion"/>
+
+            <Spinner
+                android:id="@+id/modoInformacion"
+                android:tag="modoInformacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/modo_informacion"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Usa Facebook?"
+                android:id="@+id/txtUsaFacebook"/>
+
+            <Spinner
+                android:id="@+id/usaFacebook"
+                android:tag="usaFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/uso_redes"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Usa Twitter?"
+                android:id="@+id/txtUsaTwitter"/>
+
+            <Spinner
+                android:id="@+id/usaTwitter"
+                android:tag="usaTwitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/uso_redes"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Usa Instagram?"
+                android:id="@+id/txtUsaInstagram"/>
+
+            <Spinner
+                android:id="@+id/usaInstagram"
+                android:tag="usaInstagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/uso_redes"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Tiene acceso a internet en el hogar?"
+                android:id="@+id/txtAccesoInternet"/>
+
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/rgAccesoInternet">
+
+                <RadioButton
+                    android:id="@+id/accesoInternetSi"
+                    android:tag="accesoInternetSi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:checked="false"
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/accesoInternetNo"
+                    android:tag="accesoInternetNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="No" />
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Cuánto hace que adquirió su último dispositivo electrónico?"
+                android:id="@+id/txtUltimoDispositivoElectronico"/>
+
+            <Spinner
+                android:id="@+id/ultimoDispositivoElectronico"
+                android:tag="ultimoDispositivoElectronico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/ultimo_electrodomestico"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Ha escuchado hablar del Programa Posadas Premia?"
+                android:id="@+id/txtEscuchadoHablar"/>
+
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/rgEscuchadoHablar" >
+
+                <RadioButton
+                    android:id="@+id/escuchadoHablarSi"
+                    android:tag="escuchadoHablarSi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:checked="false"
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/escuchadoHablarNo"
+                    android:tag="escuchadoHablarNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="No" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Qué le parece esta iniciativa de la Municipalidad de Posadas?"
+                android:id="@+id/txtDinamicaEntrevista" />
+
+            <Spinner
+                android:id="@+id/dinamicaEntrevista"
+                android:tag="dinamicaEntrevista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/dinamica_entrevista"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Dónde le interesaría obtener los beneficios de descuentos de Posadas Premia?"
+                android:id="@+id/txtBeneficios"/>
+
+            <Spinner
+                android:id="@+id/beneficios"
+                android:tag="beneficios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/beneficios"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Por qué medio le interesaría seguir en contacto con PP?"
+                android:id="@+id/txtMedioContacto"/>
+
+            <Spinner
+                android:id="@+id/medioContacto"
+                android:tag="medioContacto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/medio_contacto"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Por favor, dejenos esa dirección / nro para comunicarnos con ud"
+                android:id="@+id/txtDireccionContacto"/>
+
+            <EditText
+                android:id="@+id/direccionContacto"
+                android:tag="direccionContacto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Observaciones y comentarios del entrevistado."
+                android:id="@+id/txtObservaciones"/>
+
+            <EditText
+                android:id="@+id/observaciones"
+                android:tag="observaciones"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modalidad de la aplicación"
+                android:id="@+id/txtModalidadAplicacion"/>
+
+            <Spinner
+                android:id="@+id/modalidadAplicacion"
+                android:tag="modalidadAplicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/modalidad_aplicacion"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo de vivienda"
+                android:id="@+id/txtViviendaTipo"/>
+
+            <Spinner
+                android:id="@+id/viviendaTipo"
+                android:tag="viviendaTipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/vivienda_tipo"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Material de la vivienda"
+                android:id="@+id/txtViviendaMaterial"/>
+
+            <Spinner
+                android:id="@+id/viviendaMaterial"
+                android:tag="viviendaMaterial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/vivienda_material"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calidad de la vivienda"
+                android:id="@+id/txtViviendaCalidad"/>
+
+            <Spinner
+                android:id="@+id/viviendaCalidad"
+                android:tag="viviendaCalidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/dinamica_entrevista"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel de aceptación para la administración de la entrevista"
+                android:id="@+id/txtNivelAceptacion"/>
+
+            <Spinner
+                android:id="@+id/nivelAceptacion"
+                android:tag="nivelAceptacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/dinamica_entrevista"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel de entendimiento de la entrevista"
+                android:id="@+id/txtNivelEntendimiento"/>
+
+            <Spinner
+                android:id="@+id/nivelEntendimiento"
+                android:tag="nivelEntendimiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/dinamica_entrevista"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel de satisfacción final"
+                android:id="@+id/txtNivelSatisfaccion"/>
+
+            <Spinner
+                android:id="@+id/nivelSatisfaccion"
+                android:tag="nivelSatisfaccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/dinamica_entrevista"
+                android:spinnerMode="dialog" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Observaciones y comentarios del entrevistador"
+                android:id="@+id/txtObservacionesEntrevistador"/>
+
+            <EditText
+                android:id="@+id/observacionesEntrevistador"
+                android:tag="observacionesEntrevistador"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/scrollView"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/scrollView"
+                android:layout_gravity="right"
+                android:layout_marginEnd="22dp"
+                android:layout_marginRight="0dp"
+                android:text="Guardar"
+                android:onClick="guardarEncuesta"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
     </ScrollView>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GUARDAR"
-        android:id="@+id/btnSave"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/btnClose" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CERRAR"
-        android:id="@+id/btnClose"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 </RelativeLayout>
 
 
