@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--BARRIOS-->
-    <string-array name="barrios">
-        <item>Villa Urquiza</item>
-        <item>Villa Sarita</item>
-    </string-array>
-
-    <!--REGIMEN DE TENENCIA-->
-    <string-array name="regimen_tenencia_vivienda">
-        <item></item>
-        <item>Propietario de la vivienda y del terreno</item>
-        <item>Propietario de la vivienda solamente</item>
-        <item>Inquilino</item>
-        <item>Ocupante por pago de gastos </item>
-        <item>Ocupante gratuito</item>
-        <item>Ocupante de hecho</item>
-        <item>En sucesión</item>
-        <item>Otra situación</item>
-    </string-array>
-
-
-    <!--TIPO DE BUSQUEDA-->
-    <string-array name="busqueda_registro">
+    <!--TIPO BUSQUEDA-->
+    <string-array name="tipo_busqueda">
+        <item>Seleccionar</item>
         <item>DNI</item>
         <item>Partida</item>
     </string-array>
+    <!--TIPO DOCUMENTO-->
+    <string-array name="tipo_documento">
+        <item></item>
+        <item>DNI</item>
+        <item>LC</item>
+        <item>CI</item>
+        <item>PP</item>
+    </string-array>
 
+    <!--SEXO-->
+    <string-array name="sexo">
+        <item></item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
+
+    <!--ESTADO CIVIL-->
+    <string-array name="estado_civil">
+        <item></item>
+        <item>Soltero</item>
+        <item>Casado</item>
+        <item>Viudo</item>
+    </string-array>
 
     <!-- COMPOSICION FAMILIAR-->
     <string-array name="composicion_familiar">
@@ -39,28 +42,6 @@
         <item>Hogares mono parentales (no están en pareja o con hijos a cargo)</item>
         <item>Pareja o adulto con hijos ya fuera del hogar</item>
     </string-array>
-
-    <string-array name="relacion_parentesco">
-        <item></item>
-        <item>Jefe</item>
-        <item>Jefa</item>
-        <item>Pareja</item>
-        <item>Hijo</item>
-        <item>Hija</item>
-        <item>Yerno</item>
-        <item>Nuera</item>
-        <item>Nieto</item>
-        <item>Nieta</item>
-        <item>Suegro</item>
-        <item>Suegra</item>
-        <item>Madre</item>
-        <item>Padre</item>
-        <item>Hermano</item>
-        <item>Hermana</item>
-        <item>Otros familiares</item>
-        <item>No familiares</item>
-    </string-array>
-
 
     <!--NIVEL EDUCATIVO-->
     <string-array name="nivel_educativo">
@@ -77,81 +58,27 @@
         <item>Post grado</item>
     </string-array>
 
-    <!--CONDICION DE LA ACTIVIDAD-->
-    <string-array name="condicion_actividad">
-        <item></item>
-        <item>Ocupado</item>
-        <item>Desocupado</item>
-        <item>Inactivo</item>
-        <item>Menor de 10 años</item>
+
+    <!--SITUACION JEFE FAMILIA-->
+    <string-array name="situacion_jefe_familia">
+        <item>Empleado sector público </item>
+        <item>Empleado sector privado </item>
+        <item>Trabajador por cuenta propia </item>
+        <item>Profesional independiente </item>
+        <item>Patrón </item>
+        <item>Desempleado </item>
+        <item>Temporalmente depedido </item>
+        <item>Changarín </item>
+        <item>Ama de casa </item>
+        <item>Estudiante </item>
+        <item>Empl. serv. doméstico </item>
+        <item>Discapacitado </item>
+        <item>Jubilado </item>
+        <item>Pensionado </item>
+        <item>Unicamente beneficiario plan social</item>
     </string-array>
 
-    <!--CATEGORIA OCUPACIONAL-->
-    <string-array name="categoria_ocupacional">
-        <item></item>
-        <item>Empleado sector público</item>
-        <item>Empleado sector privado</item>
-        <item>Trabajador por cuenta propia</item>
-        <item>Profesional independiente</item>
-        <item>Patrón</item>
-        <item>Changarín</item>
-        <item>Empl. serv. Doméstico</item>
-    </string-array>
-
-
-    <!--CATEGORIA INACTIVIDAD-->
-    <string-array name="categoria_inactividad">
-        <item></item>
-        <item>Jubilado</item>
-        <item>Pensionado</item>
-        <item>Rentista</item>
-        <item>Estudiante</item>
-        <item>Ama de casa</item>
-        <item>Menor de 6 años</item>
-        <item>Discapacitado</item>
-        <item>Únicamente beneficiario plan social</item>
-    </string-array>
-
-
-    <!--COBERTURA MEDICA-->
-    <string-array name="cobertura_medica">
-        <item></item>
-        <item>Obra social (incluye PAMI)</item>
-        <item>Mutual, prepaga, servicio de emergencia</item>
-        <item>Planes y seguros públicos</item>
-    </string-array>
-
-
-    <!--MEDIO TRANSPORTE-->
-    <string-array name="medio_transporte">
-        <item></item>
-        <item>Auto</item>
-        <item>Moto</item>
-        <item>Bicicleta</item>
-        <item>Colectivo</item>
-    </string-array>
-
-
-    <!--FRECUENCIA USO-->
-    <string-array name="frecuencia_uso">
-        <item></item>
-        <item>Diariamente</item>
-        <item>Entre 4 y 6 veces x semana</item>
-        <item>1 a 3 veces x semana</item>
-        <item>Menos de una vez x semana</item>
-    </string-array>
-
-    <!--CATEGORIA Sobre la dinamica de la entrevista-->
-    <string-array name="dinamica_entrevista">
-        <item></item>
-        <item>Muy Buena</item>
-        <item>Buena</item>
-        <item>Regular</item>
-        <item>Mala</item>
-        <item>Muy mala</item>
-    </string-array>
-
-    <!--CATEGORIA compras -->
+    <!--Compras diarias -->
     <string-array name="compras_diarias">
         <item></item>
         <item>En comercios especializados por rubro de su barrio (verdulería, panadería, etc) </item>
@@ -162,89 +89,15 @@
         <item>En grandes supermercados o hipermercados </item>
         <item>En supermercados mayoristas</item>
     </string-array>
-    <string-array name="compras_excepcionales">
-        <item></item>
-        <item>En comercios de su barrio</item>
-        <item>En comercios de otros barrios</item>
-        <item>En comercios del centro de Posadas</item>
-        <item>En shoppings o centros comerciales</item>
-    </string-array>
 
-    <!--CATEGORIA acceso a los medios de comunicacion -->
-    <string-array name="modo_informacion">
-        <item></item>
-        <item>tv</item>
-        <item>radio am</item>
-        <item>radio fm</item>
-        <item>periodicos en papel</item>
-        <item>periodicos digitales</item>
-        <item>portales de noticias</item>
-        <item>redes sociales</item>
-        <item>"boca en boca"</item>
-    </string-array>
-
-
-    <string-array name="uso_redes">
-        <item></item>
-        <item>Siempre</item>
-        <item>Algunas veces</item>
-        <item>Nunca</item>
-    </string-array>
-
-    <string-array name="ultimo_electrodomestico">
-        <item></item>
-        <item>Menos de 3 meses</item>
-        <item>Entre 3 y 6 meses</item>
-        <item>Entre 6 meses y 1 año</item>
-        <item>Hace más de un año</item>
-    </string-array>
-
-    <!--CATEGORIA sobre posadas premia -->
-    <string-array name="beneficios">
-        <item></item>
-        <item>Gastronomía</item>
-        <item>Salud y belleza</item>
-        <item>Entretenimiento</item>
-        <item>Turismo</item>
-        <item>Compras</item>
-        <item>Servicios</item>
-    </string-array>
-
-    <string-array name="medio_contacto">
-        <item></item>
+    <!--Seguimiento Contacto -->
+    <string-array name="seguimiento_contacto">
         <item>Mail</item>
-        <item>Sms</item>
-        <item>Facebook</item>
-        <item>Teléfono fijo</item>
-        <item>Personalmente</item>
+        <item>SMS</item>
+        <item>Facebook </item>
+        <item>Teléfono fijo </item>
+        <item>Personalmente </item>
         <item>Whatsapp</item>
-    </string-array>
-
-    <!--CATEGORIA modalidad-->
-    <string-array name="modalidad_aplicacion">
-        <item></item>
-        <item>Personal completa</item>
-        <item>Personal y telefónica</item>
-        <item>Telefónica</item>
-    </string-array>
-
-
-    <!--CATEGORIA vivienda-->
-    <string-array name="vivienda_tipo">
-        <item></item>
-        <item>Casilla</item>
-        <item>Monoblock</item>
-        <item>Departamento</item>
-        <item>Duplex</item>
-        <item>PH</item>
-        <item>Casa</item>
-    </string-array>
-
-    <string-array name="vivienda_material">
-        <item></item>
-        <item>Material</item>
-        <item>Madera</item>
-        <item>Chapa</item>
     </string-array>
 
 

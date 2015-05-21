@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
-public class RegistroActivity extends ActionBarActivity  {
+public class RegistroActivity extends ActionBarActivity {
 
     Button btnSave;
     Button btnClose;
@@ -45,7 +45,7 @@ public class RegistroActivity extends ActionBarActivity  {
         //setContentView(R.layout.fragment_persona_detalle);
         setContentView(R.layout.activity_registro);
 
-        findViewById(R.id.nroBrigadista).requestFocus();
+        findViewById(R.id.tipoBusqueda).requestFocus();
 
 
         Bundle bundle = getIntent().getExtras();
@@ -118,8 +118,7 @@ public class RegistroActivity extends ActionBarActivity  {
     }
 
 
-
-//    public void onClick(View view) {
+    //    public void onClick(View view) {
 //        if (view == findViewById(R.id.btnSave)){
 //            PersonaRepository repo = new PersonaRepository(this);
 //            Persona persona = new Persona();
@@ -165,4 +164,16 @@ public class RegistroActivity extends ActionBarActivity  {
 //
 //
 //    }
+    public void datePickerDialog(View v) {
+        DatePickerFragment newFragment = new DatePickerFragment();
+
+        //seteeo el EditText asociado al DatePicker
+        newFragment.setEditTextAsociado((EditText) v);
+
+        newFragment.show(getFragmentManager(), "datePicker");
+    }
+
+    public void guardarRegistro(View v) {
+
+    }
 }

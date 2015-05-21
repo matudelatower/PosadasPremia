@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -16,726 +17,382 @@
 
 
         <LinearLayout
+            android:id="@+id/encuestaLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/encuestaLayout">
+            android:orientation="vertical">
 
 
             <TextView
+                android:id="@+id/txtNroCuestionario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nro de cuestionario"
-                android:id="@+id/txtNroCuestionario" />
+                android:text="Buscar Por" />
+
+            <Spinner
+                android:id="@+id/tipoBusqueda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/tipo_busqueda"
+                android:spinnerMode="dialog"
+                android:tag="tipoBusqueda" />
+
+            <TextView
+                android:id="@+id/txtNumeroBusqueda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numero" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/numeroBusqueda"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:tag="nroBusqueda" />
+
+                <Button
+                    android:id="@+id/btnBuscar"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Buscar" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txtApellidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apellidos*" />
 
             <EditText
-                android:id="@+id/nroCuestionario"
-                android:tag="nroCuestionario"
+                android:id="@+id/apellidos"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:tag="apellidos" />
+
+
+            <TextView
+                android:id="@+id/txtNombres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombres*" />
+
+            <EditText
+                android:id="@+id/nombres"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:tag="nombres" />
+
+
+            <TextView
+                android:id="@+id/txtTipoDocumento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo Documento*" />
+
+            <Spinner
+                android:id="@+id/tipoDocumento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/tipo_documento"
+                android:spinnerMode="dialog"
+                android:tag="tipoDocumento" />
+
+
+            <TextView
+                android:id="@+id/txtNumeroDocumento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numero Documento*" />
+
+            <EditText
+                android:id="@+id/numeroDocumento"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:enabled="false" />
+                android:tag="numeroDocumento" />
 
 
             <TextView
+                android:id="@+id/txtCuit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nro de Brigadista"
-                android:id="@+id/txtNroBrigadista"/>
+                android:text="CUIT" />
+
 
             <EditText
-                android:id="@+id/nroBrigadista"
-                android:tag="nroBrigadista"
+                android:id="@+id/cuit"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:tag="cuit" />
 
 
             <TextView
+                android:id="@+id/txtFechaNacimiento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nro de Partida"
-                android:id="@+id/txtNroPartida"/>
-
-            <EditText
-                android:id="@+id/nroPartida"
-                android:tag="nroPartida"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dom de la Entrevista"
-                android:id="@+id/txtDomEntrevista"/>
-
-            <EditText
-                android:id="@+id/domicilioEntrevista"
-                android:tag="domicilioEntrevista"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Manzana"
-                android:id="@+id/txtManzana"/>
-
-            <EditText
-                android:id="@+id/manzana"
-                android:tag="manzana"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chacra"
-                android:id="@+id/txtChacra"/>
-
-            <EditText
-                android:id="@+id/chacra"
-                android:tag="chacra"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Barrio"
-                android:id="@+id/txtBarrio"/>
-
-            <EditText
-                android:id="@+id/barrio"
-                android:tag="barrio"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Categoría o Sección"
-                android:id="@+id/txtCategoriaSeccion"/>
-
-            <EditText
-                android:id="@+id/categoriaSeccion"
-                android:tag="categoriaSeccion"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Vive en este domicilio?"
-                android:id="@+id/txtViveDomicilio"/>
-
-            <RadioGroup
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:id="@+id/viveDomicilio">
-
-                <RadioButton
-                    android:id="@+id/viveDomicilioSi"
-                    android:tag="viveDomicilioSi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:checked="false"
-                    android:text="Si" />
-
-                <RadioButton
-                    android:id="@+id/viveDomicilioNo"
-                    android:tag="viveDomicilioNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="No" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Régimen de tenencia de vivienda"
-                android:id="@+id/txtRegimenTenenciaVivienda"/>
-
-            <Spinner
-                android:id="@+id/regimenTenenciaVivienda"
-                android:tag="regimenTenenciaVivienda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/regimen_tenencia_vivienda"
-                android:spinnerMode="dialog"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Género"
-                android:id="@+id/txtGenero"/>
-
-            <RadioGroup
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:id="@+id/rgGenero">
-
-                <RadioButton
-                    android:id="@+id/generoVaron"
-                    android:tag="generoVaron"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:checked="false"
-                    android:text="Varón" />
-
-                <RadioButton
-                    android:id="@+id/generoMujer"
-                    android:tag="generoMujer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="Mujer" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿En qué fecha nació?"
-                android:id="@+id/txtFechaNacimiento"/>
+                android:text="Fecha Nacimiento*" />
 
             <EditText
                 android:id="@+id/fechaNacimiento"
-                android:tag="fechaNacimiento"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                android:onClick="datePickerDialog" />
+                android:onClick="datePickerDialog"
+                android:tag="fechaNacimiento" />
 
             <TextView
+                android:id="@+id/txtSexo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Número de Dni"
-                android:id="@+id/txtNroDni"/>
+                android:text="Sexo*" />
+
+            <Spinner
+                android:id="@+id/sexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/sexo"
+                android:spinnerMode="dialog"
+                android:tag="sexo" />
+
+            <TextView
+                android:id="@+id/txtEstadoCivil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado Civil" />
+
+            <Spinner
+                android:id="@+id/estadoCivil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:entries="@array/estado_civil"
+                android:spinnerMode="dialog"
+                android:tag="estadoCivil" />
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email*" />
 
             <EditText
-                android:id="@+id/nroDni"
-                android:tag="nroDni"
-                android:layout_width="fill_parent"
+                android:id="@+id/email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/miembrosContainer">
-
-
-
-            </LinearLayout>
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Registrar Nuevo Miembro"
-                android:id="@+id/btnNuevoMiembro"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal"
-                android:onClick="registrarNuevoMiembro"
-                android:visibility="visible" />
-
+                android:ems="10"
+                android:inputType="textEmailAddress" />
 
             <TextView
+                android:id="@+id/txtTelefonoPrincipal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Cuáles son, según su opinión, los tres principales problemas que debería atender prioritariamente el gobierno municipal?"
-                android:id="@+id/txtProblemasAtencionGobiernoMunicipal"/>
+                android:text="Telefono Principal*" />
 
             <EditText
-                android:id="@+id/problemasAtencionGobiernoMunicipal1"
-                android:tag="problemasAtencionGobiernoMunicipal1"
+                android:id="@+id/telefonoPrincipal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:id="@+id/problemasAtencionGobiernoMunicipal2"
-                android:tag="problemasAtencionGobiernoMunicipal2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:id="@+id/problemasAtencionGobiernoMunicipal3"
-                android:tag="problemasAtencionGobiernoMunicipal3"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/mediosTransporteContainer">
-
-
-
-            </LinearLayout>
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Registrar Nuevo Medio de Transporte"
-                android:id="@+id/btnNuevoMedio"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal"
-                android:onClick="registrarNuevoMedioTransporte"
-                android:visibility="visible" />
-
+                android:inputType="number"
+                android:tag="telefonoPrincipal" />
 
             <TextView
+                android:id="@+id/txtTelefonoSecundario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Dónde realiza mayoritariamente sus compras diarias?"
-                android:id="@+id/txtComprasDiarias"/>
-
-            <Spinner
-                android:id="@+id/comprasDiarias"
-                android:tag="comprasDiarias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/compras_diarias"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Dónde realiza las compras excepcionales? (indumentaria / calzado / regalos)"
-                android:id="@+id/txtComprasExcepcionales"/>
-
-            <Spinner
-                android:id="@+id/comprasExcepcionales"
-                android:tag="comprasExcepcionales"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/compras_excepcionales"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿cuántos TV hay en el hogar?"
-                android:id="@+id/txtTvsHogar"/>
+                android:text="Telefono Secundario" />
 
             <EditText
-                android:id="@+id/tvsHogar"
-                android:tag="tvsHogar"
+                android:id="@+id/telefonoSecundario"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="number"
+                android:tag="telefonoSecundario" />
 
             <TextView
+                android:id="@+id/txtDireccionContacto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Tiene radio?"
-                android:id="@+id/txtRadio"/>
-
-
-            <RadioGroup
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:id="@+id/rgRadio">
-
-                <RadioButton
-                    android:id="@+id/radioSi"
-                    android:tag="radioSi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:checked="false"
-                    android:text="SI" />
-
-                <RadioButton
-                    android:id="@+id/radioNo"
-                    android:tag="radioNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="No" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Cuántos dispositivos electrónicos inteligentes hay en su hogar? (computadoras de escritorio / tabletas / notebooks / netbooks)"
-                android:id="@+id/txtDispositivosElectronicos"/>
-
-            <EditText
-                android:id="@+id/dispositivosElectronicos"
-                android:tag="dispositivosElectronicos"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Cuántos teléfonos móviles?"
-                android:id="@+id/txtTelefonosMoviles"/>
-
-            <EditText
-                android:id="@+id/telefonosMoviles"
-                android:tag="telefonosMoviles"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿De qué modo se informa prioritariamente de lo que ocurre en Posadas?"
-                android:id="@+id/txtModoInformacion"/>
-
-            <Spinner
-                android:id="@+id/modoInformacion"
-                android:tag="modoInformacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/modo_informacion"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Usa Facebook?"
-                android:id="@+id/txtUsaFacebook"/>
-
-            <Spinner
-                android:id="@+id/usaFacebook"
-                android:tag="usaFacebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/uso_redes"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Usa Twitter?"
-                android:id="@+id/txtUsaTwitter"/>
-
-            <Spinner
-                android:id="@+id/usaTwitter"
-                android:tag="usaTwitter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/uso_redes"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Usa Instagram?"
-                android:id="@+id/txtUsaInstagram"/>
-
-            <Spinner
-                android:id="@+id/usaInstagram"
-                android:tag="usaInstagram"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/uso_redes"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Tiene acceso a internet en el hogar?"
-                android:id="@+id/txtAccesoInternet"/>
-
-
-            <RadioGroup
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:id="@+id/rgAccesoInternet">
-
-                <RadioButton
-                    android:id="@+id/accesoInternetSi"
-                    android:tag="accesoInternetSi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:checked="false"
-                    android:text="SI" />
-
-                <RadioButton
-                    android:id="@+id/accesoInternetNo"
-                    android:tag="accesoInternetNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="No" />
-            </RadioGroup>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Cuánto hace que adquirió su último dispositivo electrónico?"
-                android:id="@+id/txtUltimoDispositivoElectronico"/>
-
-            <Spinner
-                android:id="@+id/ultimoDispositivoElectronico"
-                android:tag="ultimoDispositivoElectronico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/ultimo_electrodomestico"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Ha escuchado hablar del Programa Posadas Premia?"
-                android:id="@+id/txtEscuchadoHablar"/>
-
-
-            <RadioGroup
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:id="@+id/rgEscuchadoHablar" >
-
-                <RadioButton
-                    android:id="@+id/escuchadoHablarSi"
-                    android:tag="escuchadoHablarSi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:checked="false"
-                    android:text="SI" />
-
-                <RadioButton
-                    android:id="@+id/escuchadoHablarNo"
-                    android:tag="escuchadoHablarNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="No" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Qué le parece esta iniciativa de la Municipalidad de Posadas?"
-                android:id="@+id/txtDinamicaEntrevista" />
-
-            <Spinner
-                android:id="@+id/dinamicaEntrevista"
-                android:tag="dinamicaEntrevista"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/dinamica_entrevista"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Dónde le interesaría obtener los beneficios de descuentos de Posadas Premia?"
-                android:id="@+id/txtBeneficios"/>
-
-            <Spinner
-                android:id="@+id/beneficios"
-                android:tag="beneficios"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/beneficios"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Por qué medio le interesaría seguir en contacto con PP?"
-                android:id="@+id/txtMedioContacto"/>
-
-            <Spinner
-                android:id="@+id/medioContacto"
-                android:tag="medioContacto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/medio_contacto"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Por favor, dejenos esa dirección / nro para comunicarnos con ud"
-                android:id="@+id/txtDireccionContacto"/>
+                android:text="Direccion" />
 
             <EditText
                 android:id="@+id/direccionContacto"
-                android:tag="direccionContacto"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:tag="direccionContacto" />
 
             <TextView
+                android:id="@+id/txtNumeroPuerta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Observaciones y comentarios del entrevistado."
-                android:id="@+id/txtObservaciones"/>
+                android:text="Numero" />
 
             <EditText
-                android:id="@+id/observaciones"
-                android:tag="observaciones"
+                android:id="@+id/numeroPuerta"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Modalidad de la aplicación"
-                android:id="@+id/txtModalidadAplicacion"/>
-
-            <Spinner
-                android:id="@+id/modalidadAplicacion"
-                android:tag="modalidadAplicacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/modalidad_aplicacion"
-                android:spinnerMode="dialog" />
-
+                android:inputType="number"
+                android:tag="numeroPuerta" />
 
             <TextView
+                android:id="@+id/txtDepartamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tipo de vivienda"
-                android:id="@+id/txtViviendaTipo"/>
-
-            <Spinner
-                android:id="@+id/viviendaTipo"
-                android:tag="viviendaTipo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/vivienda_tipo"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Material de la vivienda"
-                android:id="@+id/txtViviendaMaterial"/>
-
-            <Spinner
-                android:id="@+id/viviendaMaterial"
-                android:tag="viviendaMaterial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/vivienda_material"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calidad de la vivienda"
-                android:id="@+id/txtViviendaCalidad"/>
-
-            <Spinner
-                android:id="@+id/viviendaCalidad"
-                android:tag="viviendaCalidad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/dinamica_entrevista"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel de aceptación para la administración de la entrevista"
-                android:id="@+id/txtNivelAceptacion"/>
-
-            <Spinner
-                android:id="@+id/nivelAceptacion"
-                android:tag="nivelAceptacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/dinamica_entrevista"
-                android:spinnerMode="dialog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel de entendimiento de la entrevista"
-                android:id="@+id/txtNivelEntendimiento"/>
-
-            <Spinner
-                android:id="@+id/nivelEntendimiento"
-                android:tag="nivelEntendimiento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/dinamica_entrevista"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel de satisfacción final"
-                android:id="@+id/txtNivelSatisfaccion"/>
-
-            <Spinner
-                android:id="@+id/nivelSatisfaccion"
-                android:tag="nivelSatisfaccion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:entries="@array/dinamica_entrevista"
-                android:spinnerMode="dialog" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Observaciones y comentarios del entrevistador"
-                android:id="@+id/txtObservacionesEntrevistador"/>
+                android:text="Departamento" />
 
             <EditText
-                android:id="@+id/observacionesEntrevistador"
-                android:tag="observacionesEntrevistador"
+                android:id="@+id/departamento"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:tag="departamento" />
+
+            <TextView
+                android:id="@+id/txtPiso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Piso" />
+
+            <EditText
+                android:id="@+id/piso"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:tag="piso" />
+
+            <TextView
+                android:id="@+id/txtLegend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Preguntas Adicionales"
+                android:textStyle="bold" />
+
+            <!--ENCUESTA-->
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="10dip">
+
+                <TextView
+                    android:id="@+id/txtComposicionFamiliar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cómo se compone el grupo familiar con quien comparte su hogar?" />
+
+                <Spinner
+                    android:id="@+id/composicionFamiliar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:entries="@array/composicion_familiar"
+                    android:spinnerMode="dialog"
+                    android:tag="composicionFamiliar" />
+
+                <TextView
+                    android:id="@+id/txtNivelEducativo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Podría indicarnos el máximo nivel educativo alcanzado en el hogar? (el maximo alcanzado por cualquiera de los integrantes)" />
+
+                <Spinner
+                    android:id="@+id/nivelEducativo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:entries="@array/nivel_educativo"
+                    android:spinnerMode="dialog"
+                    android:tag="nivelEducativo" />
+
+                <TextView
+                    android:id="@+id/txtSituacionJefeFamilia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cuál es la situación laboral del jefe o jefa de familia?" />
+
+                <Spinner
+                    android:id="@+id/situacionJefeFamilia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:entries="@array/situacion_jefe_familia"
+                    android:spinnerMode="dialog"
+                    android:tag="situacionJefeFamilia" />
+
+                <TextView
+                    android:id="@+id/txtCantidadDispositivos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cuántos dispositivos electrónicos inteligentes hay en su hogar? (computadoras de escritorio / tabletas / smartfones / notebooks / netbooks / smart-tv )" />
+
+                <EditText
+                    android:id="@+id/cantidadDispositivos"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:tag="cantidadDispositivos" />
+
+                <TextView
+                    android:id="@+id/txtComprasDiarias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Dónde realiza mayoritariamente sus compras diarias?" />
+
+                <Spinner
+                    android:id="@+id/comprasDiarias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:entries="@array/compras_diarias"
+                    android:spinnerMode="dialog"
+                    android:tag="comprasDiarias" />
+
+                <TextView
+                    android:id="@+id/txtSeguimientoContacto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Por qué medio le interesaría seguir en contacto con PP?" />
+
+                <Spinner
+                    android:id="@+id/seguimientoContacto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:entries="@array/seguimiento_contacto"
+                    android:spinnerMode="dialog"
+                    android:tag="seguimientoContacto" />
+
+                <TextView
+                    android:id="@+id/txtContactoPreferido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Por favor, dejenos esa dirección / nro para comunicarnos con ud" />
+
+                <EditText
+                    android:id="@+id/contactoPreferido"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:tag="contactoPreferido" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/button"
@@ -748,11 +405,11 @@
                 android:layout_marginEnd="22dp"
                 android:layout_marginRight="0dp"
                 android:text="Guardar"
-                android:onClick="guardarEncuesta"
+                android:onClick="guardarRegistro"
                 android:nestedScrollingEnabled="false" />
-
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>
 
 
