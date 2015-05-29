@@ -1,8 +1,12 @@
 package com.delatowebs.posadaspremia;
 
+
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,9 +17,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-
 
 public class RegistroActivity extends ActionBarActivity {
 
@@ -304,5 +311,94 @@ public class RegistroActivity extends ActionBarActivity {
             }
 
         }
+    }
+
+    public void buscarContribuyente(View v) {
+        //Lee archivo local
+        PackageManager m = getPackageManager();
+        String s = getPackageName();
+        try {
+            PackageInfo p = m.getPackageInfo(s, 0);
+            s = p.applicationInfo.dataDir;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w("BusquedaPadronActivity", "Error Package name not found ", e);
+        }
+
+
+        InputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(s + "/padron.csv");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        //Abre CSV
+        CSVFile csvFile = new CSVFile(inputStream);
+
+        ArrayList<Padron> padronList = csvFile.readPadron();
+
+        Spinner spinnerTipoBusqueda = (Spinner) findViewById(R.id.tipoBusqueda);
+        EditText txtBusqueda = (EditText) findViewById(R.id.numeroBusqueda);
+
+        boolean busquedaValida = true;
+
+        if (txtBusqueda.getText().toString().trim().equals("")) {
+            txtBusqueda.setError("Debe ingresar un numero para su busqueda");
+            busquedaValida = false;
+        }
+
+        if (spinnerTipoBusqueda.getSelectedItem().toString().trim().equals("")) {
+            ((TextView) spinnerTipoBusqueda.getSelectedView()).setError("Debe seleccionar al menos un tipo de Sexo");
+            busquedaValida = false;
+        }
+
+        if (!busquedaValida) {
+            Toast.makeText(this, "Debe completar los campos para la busqueda.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String paramTipoBusqueda = spinnerTipoBusqueda.getSelectedItem().toString();
+        String constraint = txtBusqueda.getText().toString().toLowerCase();
+
+        ArrayList<Padron> filteredItems = new ArrayList<Padron>();
+
+        if (constraint != null && constraint.toString().length() > 0) {
+
+
+            for (int i = 0, l = padronList.size(); i < l; i++) {
+                Padron padron = padronList.get(i);
+
+                if (padron.toString(paramTipoBusqueda).toLowerCase().contains(constraint)) {
+                    filteredItems.add(padron);
+                    break;
+                }
+
+            }
+
+        }
+
+        Padron objPadron;
+        if (filteredItems.size() > 0) {
+            objPadron = filteredItems.get(0);
+            Toast.makeText(this, "Contribuyente encontrado en Padron.", Toast.LENGTH_SHORT).show();
+        } else {
+            objPadron = new Padron();
+            Toast.makeText(this, "Contribuyente NO encontrado en Padron.", Toast.LENGTH_SHORT).show();
+        }
+
+
+        String[] razonSocial = objPadron.getRazonSocial().split(",");
+        String apellido = razonSocial[0];
+        String nombre = razonSocial[1];
+        EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
+        EditText txtNombres = (EditText) findViewById(R.id.nombres);
+        EditText txtCuit = (EditText) findViewById(R.id.cuit);
+        EditText txtDocumento = (EditText) findViewById(R.id.numeroDocumento);
+
+        txtApellidos.setText(apellido);
+        txtNombres.setText(nombre);
+        txtCuit.setText(objPadron.getCuit());
+        txtDocumento.setText(objPadron.getDocumento());
     }
 }
