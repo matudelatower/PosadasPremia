@@ -106,7 +106,7 @@ public class AdminActivity extends ActionBarActivity {
 
             PersonaRepository personaRepo = new PersonaRepository(this);
 
-            serializer.startTag(null, "encuestas");
+            serializer.startTag(null, "registros");
 
             TabletRepository repo = new TabletRepository(this);
 
@@ -116,18 +116,77 @@ public class AdminActivity extends ActionBarActivity {
 
             for (HashMap object : personaRepo.getAllPersonas()) {
 
-                serializer.startTag(null, "encuesta");
+                serializer.startTag(null, "persona");
 
                 serializer.startTag(null, "id");
                 serializer.text(object.get("id").toString());
                 serializer.endTag(null, "id");
 
-                serializer.startTag(null, "fecha");
-                serializer.text(object.get("fecha").toString());
-                serializer.endTag(null, "fecha");
+                serializer.startTag(null, "nombre");
+                serializer.text(object.get("nombre").toString());
+                serializer.endTag(null, "nombre");
+
+                serializer.startTag(null, "apellido");
+                serializer.text(object.get("apellido").toString());
+                serializer.endTag(null, "apellido");
+
+                serializer.startTag(null, "documento");
+                serializer.text(object.get("documento").toString());
+                serializer.endTag(null, "documento");
+
+                serializer.startTag(null, "cuit");
+                serializer.text(object.get("cuit").toString());
+                serializer.endTag(null, "cuit");
+
+                serializer.startTag(null, "tipo_doc");
+                serializer.text(object.get("tipoDoc").toString());
+                serializer.endTag(null, "tipo_doc");
+
+                serializer.startTag(null, "fecha_nacimiento");
+                serializer.text(object.get("fechaNacimiento").toString());
+                serializer.endTag(null, "fecha_nacimiento");
+
+                serializer.startTag(null, "sexo");
+                serializer.text(object.get("sexo").toString());
+                serializer.endTag(null, "sexo");
+
+                serializer.startTag(null, "estado_civil");
+                serializer.text(object.get("estadoCivil").toString());
+                serializer.endTag(null, "estado_civil");
+
+                serializer.startTag(null, "mail");
+                serializer.text(object.get("mail").toString());
+                serializer.endTag(null, "mail");
+
+                serializer.startTag(null, "tel_principal");
+                serializer.text(object.get("telPrincipal").toString());
+                serializer.endTag(null, "tel_principal");
+
+                serializer.startTag(null, "tel_secundario");
+                serializer.text(object.get("telSecundario").toString());
+                serializer.endTag(null, "tel_secundario");
+
+                serializer.startTag(null, "direccion");
+                serializer.text(object.get("direccion").toString());
+                serializer.endTag(null, "direccion");
+
+
+                serializer.startTag(null, "numero");
+                serializer.text(object.get("numero").toString());
+                serializer.endTag(null, "numero");
+
+
+                serializer.startTag(null, "departamento");
+                serializer.text(object.get("departamento").toString());
+                serializer.endTag(null, "departamento");
+
+
+                serializer.startTag(null, "piso");
+                serializer.text(object.get("piso").toString());
+                serializer.endTag(null, "piso");
 
                 serializer.startTag(null, "cuestionario");
-                serializer.cdsect(object.get("encuesta").toString());
+                serializer.cdsect(object.get("cuestionario").toString());
                 serializer.endTag(null, "cuestionario");
 
 
@@ -135,11 +194,15 @@ public class AdminActivity extends ActionBarActivity {
                 serializer.text(object.get("creadoPor").toString());
                 serializer.endTag(null, "creado_por");
 
-                serializer.endTag(null, "encuesta");
+                serializer.startTag(null, "actualizado");
+                serializer.text(object.get("actualizado").toString());
+                serializer.endTag(null, "actualizado");
+
+                serializer.endTag(null, "persona");
 
             }
 
-            serializer.endTag(null, "encuestas");
+            serializer.endTag(null, "registros");
 
             serializer.endDocument();
 

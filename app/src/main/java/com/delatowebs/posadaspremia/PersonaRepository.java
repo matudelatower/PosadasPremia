@@ -333,6 +333,21 @@ public class PersonaRepository {
                 persona.put("apellido", cursor.getString(cursor.getColumnIndex(Persona.KEY_APELLIDO)));
                 persona.put("creadoPor", cursor.getString(cursor.getColumnIndex(Persona.KEY_CREADO_POR)));
                 persona.put("documento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
+                persona.put("cuit", cursor.getString(cursor.getColumnIndex(Persona.KEY_CUIT)));
+                persona.put("tipoDoc", cursor.getString(cursor.getColumnIndex(Persona.KEY_TIPO_DOC)));
+                persona.put("fechaNacimiento", cursor.getString(cursor.getColumnIndex(Persona.KEY_FECHA_NACIMIENTO)));
+                persona.put("sexo", cursor.getString(cursor.getColumnIndex(Persona.KEY_SEXO)));
+                persona.put("estadoCivil", cursor.getString(cursor.getColumnIndex(Persona.KEY_ESTADO_CIVIL)));
+                persona.put("mail", cursor.getString(cursor.getColumnIndex(Persona.KEY_EMAIL)));
+                persona.put("telPrincipal", cursor.getString(cursor.getColumnIndex(Persona.KEY_TEL_PRINCIPAL)));
+                persona.put("telSecundario", cursor.getString(cursor.getColumnIndex(Persona.KEY_TEL_SECUNDARIO)));
+                persona.put("direccion", cursor.getString(cursor.getColumnIndex(Persona.KEY_DIRECCION)));
+                persona.put("numero", cursor.getString(cursor.getColumnIndex(Persona.KEY_NUMERO)));
+                persona.put("departamento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DEPARTAMENTO)));
+                persona.put("piso", cursor.getString(cursor.getColumnIndex(Persona.KEY_PISO)));
+                persona.put("cuestionario", cursor.getString(cursor.getColumnIndex(Persona.KEY_CUESTIONARIO)));
+                persona.put("actualizado", cursor.getString(cursor.getColumnIndex(Persona.KEY_ACTUALIZADO)));
+
                 personaList.add(persona);
 
             } while (cursor.moveToNext());
