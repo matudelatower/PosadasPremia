@@ -1,16 +1,20 @@
 package com.delatowebs.posadaspremia;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class RegistroActivity extends ActionBarActivity {
@@ -175,5 +179,130 @@ public class RegistroActivity extends ActionBarActivity {
 
     public void guardarRegistro(View v) {
 
+        EditText txtNombre            = (EditText) findViewById(R.id.nombres);
+        EditText txtApellidos         = (EditText) findViewById(R.id.apellidos);
+        Spinner  spnTipoDoc           = (Spinner)  findViewById(R.id.tipoDocumento);
+        EditText txtNroDoc            = (EditText) findViewById(R.id.numeroDocumento);
+        EditText txtFechaNacimiento   = (EditText) findViewById(R.id.fechaNacimiento);
+        Spinner  spnSexo              = (Spinner)  findViewById(R.id.sexo);
+        EditText txtEmail             = (EditText) findViewById(R.id.email);
+        EditText txtTelPrincipal      = (EditText) findViewById(R.id.telefonoPrincipal);
+        EditText txtCuit              = (EditText) findViewById(R.id.cuit);
+        Spinner  spnEstadoCivil       = (Spinner)  findViewById(R.id.estadoCivil);
+        EditText txtTelSecundario     = (EditText) findViewById(R.id.telefonoSecundario);
+        EditText txtDireccion         = (EditText) findViewById(R.id.direccionContacto);
+        EditText txtNumero            = (EditText) findViewById(R.id.numeroPuerta);
+        EditText txtDepartamento      = (EditText) findViewById(R.id.departamento);
+        EditText txtPiso              = (EditText) findViewById(R.id.piso);
+
+
+        Boolean formularioValido = true;
+
+        if( txtNombre.getText().toString().trim().equals("")){
+            txtNombre.setError( "El nombre es requerido" );
+            formularioValido = false;
+        }
+        if(txtApellidos.getText().toString().trim().equals("")){
+            txtApellidos.setError( "El apellido es requerido" );
+            formularioValido = false;
+        }
+        if(txtNroDoc.getText().toString().trim().equals("")){
+            txtNroDoc.setError( "El Nro. Documento es requerido" );
+            formularioValido = false;
+        }
+
+        if(txtFechaNacimiento.getText().toString().trim().equals("")){
+            txtFechaNacimiento.setError( "La fecha de nacimiento es requerida" );
+            formularioValido = false;
+        }
+
+        if(spnTipoDoc.getSelectedItem().toString().trim().equals("")){
+            ((TextView)spnTipoDoc.getSelectedView()).setError("Debe seleccionar al menos un tipo de Documento");
+            formularioValido = false;
+        }
+
+        if(spnSexo.getSelectedItem().toString().trim().equals("")){
+            ((TextView)spnSexo.getSelectedView()).setError("Debe seleccionar al menos un tipo de Sexo");
+            formularioValido = false;
+        }
+
+        if(txtEmail.getText().toString().trim().equals("")){
+            txtEmail.setError( "La direccion de correo es requerida" );
+            formularioValido = false;
+        }
+
+        if(txtTelPrincipal.getText().toString().trim().equals("")){
+            txtTelPrincipal.setError("El número de teléfono principal es requerido");
+            formularioValido = false;
+        }
+
+        if(!formularioValido){
+            Toast.makeText(getApplicationContext(), "El registro no se pudo completar, por favor revise que todos los campos sean válidos",
+                    Toast.LENGTH_LONG).show();
+        }else{
+
+            try {
+
+                Persona unaPersona = new Persona();
+
+                unaPersona.setNombre(txtNombre.getText().toString());
+
+                unaPersona.setApellido(txtApellidos.getText().toString());
+
+                unaPersona.setDocumento(txtNroDoc.getText().toString());
+
+                unaPersona.setTipoDocumento(spnTipoDoc.getSelectedItem().toString());
+
+                unaPersona.setSexo(spnSexo.getSelectedItem().toString());
+
+                unaPersona.setFechaNacimiento(txtFechaNacimiento.getText().toString());
+
+                unaPersona.setEmail(txtEmail.getText().toString());
+
+                unaPersona.setTelPrincipal(txtTelPrincipal.getText().toString());
+
+                unaPersona.setCuit(txtCuit.getText().toString());
+
+                unaPersona.setEstadoCivil(spnEstadoCivil.getSelectedItem().toString());
+
+                unaPersona.setTelSecundario(txtTelSecundario.getText().toString());
+
+                unaPersona.setDireccion(txtDireccion.getText().toString());
+
+                unaPersona.setNumero(txtNumero.getText().toString());
+
+                unaPersona.setDepartamento(txtDepartamento.getText().toString());
+
+                unaPersona.setPiso(txtPiso.getText().toString());
+
+                String fecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+
+                unaPersona.setActualizado(fecha);
+
+                unaPersona.setCreadoPor(this.nroDocumento);
+
+                LinearLayout encuestaContenedor = (LinearLayout) findViewById(R.id.encuestaLayout);
+
+                XmlGenerator xmlParser = new XmlGenerator();
+
+                String xmlEncuesta = xmlParser.generarXml(encuestaContenedor);
+
+                unaPersona.setCuestionario(xmlEncuesta);
+
+                PersonaRepository personaRepo = new PersonaRepository(this);
+
+                personaRepo.insert(unaPersona);
+
+                Toast.makeText(getApplicationContext(), "El formulario se ha guardado correctamente.",
+                        Toast.LENGTH_LONG).show();
+
+                finish();
+
+            }catch(Exception e){
+                Toast.makeText(getApplicationContext(), "Hubo un errror al intentar guardar el formulario.",
+                        Toast.LENGTH_LONG).show();
+            }
+
+        }
     }
 }

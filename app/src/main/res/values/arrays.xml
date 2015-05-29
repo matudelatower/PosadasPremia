@@ -61,6 +61,7 @@
 
     <!--SITUACION JEFE FAMILIA-->
     <string-array name="situacion_jefe_familia">
+        <item></item>
         <item>Empleado sector público </item>
         <item>Empleado sector privado </item>
         <item>Trabajador por cuenta propia </item>
@@ -92,6 +93,7 @@
 
     <!--Seguimiento Contacto -->
     <string-array name="seguimiento_contacto">
+        <item></item>
         <item>Mail</item>
         <item>SMS</item>
         <item>Facebook </item>
