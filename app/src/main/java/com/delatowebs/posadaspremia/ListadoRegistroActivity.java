@@ -133,6 +133,21 @@ public class ListadoRegistroActivity extends ListActivity {
 
         i.putExtra("numeroDni", dniStr);
 
-        startActivity(i);
+//        startActivity(i);
+        startActivityForResult(i, 1);
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK){
+                String result=data.getStringExtra("result");
+            }
+            if (resultCode == RESULT_CANCELED) {
+                cargarListado();
+            }
+        }
+    }//onActivityResult
+
+
 }

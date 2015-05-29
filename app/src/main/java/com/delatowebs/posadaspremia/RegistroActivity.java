@@ -303,7 +303,10 @@ public class RegistroActivity extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), "El formulario se ha guardado correctamente.",
                         Toast.LENGTH_LONG).show();
 
+                Intent returnIntent = new Intent();
+                setResult(RESULT_CANCELED, returnIntent);
                 finish();
+
 
             }catch(Exception e){
                 Toast.makeText(getApplicationContext(), "Hubo un errror al intentar guardar el formulario.",

@@ -92,7 +92,7 @@ public class AdminActivity extends ActionBarActivity {
 
             File tarjeta = Environment.getExternalStorageDirectory();
 
-            File file = new File(tarjeta.getAbsolutePath() + "/Download/", "padron_" + fecha + ".xml");
+            File file = new File(tarjeta.getAbsolutePath() + "/Download/", "registros_" + fecha + ".xml");
 
             XmlSerializer serializer = Xml.newSerializer();
 
