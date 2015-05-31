@@ -186,67 +186,68 @@ public class RegistroActivity extends ActionBarActivity {
 
     public void guardarRegistro(View v) {
 
-        EditText txtNombre            = (EditText) findViewById(R.id.nombres);
-        EditText txtApellidos         = (EditText) findViewById(R.id.apellidos);
-        Spinner  spnTipoDoc           = (Spinner)  findViewById(R.id.tipoDocumento);
-        EditText txtNroDoc            = (EditText) findViewById(R.id.numeroDocumento);
-        EditText txtFechaNacimiento   = (EditText) findViewById(R.id.fechaNacimiento);
-        Spinner  spnSexo              = (Spinner)  findViewById(R.id.sexo);
-        EditText txtEmail             = (EditText) findViewById(R.id.email);
-        EditText txtTelPrincipal      = (EditText) findViewById(R.id.telefonoPrincipal);
-        EditText txtCuit              = (EditText) findViewById(R.id.cuit);
-        Spinner  spnEstadoCivil       = (Spinner)  findViewById(R.id.estadoCivil);
-        EditText txtTelSecundario     = (EditText) findViewById(R.id.telefonoSecundario);
-        EditText txtDireccion         = (EditText) findViewById(R.id.direccionContacto);
-        EditText txtNumero            = (EditText) findViewById(R.id.numeroPuerta);
-        EditText txtDepartamento      = (EditText) findViewById(R.id.departamento);
-        EditText txtPiso              = (EditText) findViewById(R.id.piso);
+        EditText txtNombre = (EditText) findViewById(R.id.nombres);
+        EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
+        Spinner spnTipoDoc = (Spinner) findViewById(R.id.tipoDocumento);
+        EditText txtNroDoc = (EditText) findViewById(R.id.numeroDocumento);
+        EditText txtFechaNacimiento = (EditText) findViewById(R.id.fechaNacimiento);
+        Spinner spnSexo = (Spinner) findViewById(R.id.sexo);
+        EditText txtEmail = (EditText) findViewById(R.id.email);
+        EditText txtTelPrincipal = (EditText) findViewById(R.id.telefonoPrincipal);
+        EditText txtCuit = (EditText) findViewById(R.id.cuit);
+        EditText txtNumeroPartida = (EditText) findViewById(R.id.numeroPartida);
+        Spinner spnEstadoCivil = (Spinner) findViewById(R.id.estadoCivil);
+        EditText txtTelSecundario = (EditText) findViewById(R.id.telefonoSecundario);
+        EditText txtDireccion = (EditText) findViewById(R.id.direccionContacto);
+        EditText txtNumero = (EditText) findViewById(R.id.numeroPuerta);
+        EditText txtDepartamento = (EditText) findViewById(R.id.departamento);
+        EditText txtPiso = (EditText) findViewById(R.id.piso);
 
 
         Boolean formularioValido = true;
 
-        if( txtNombre.getText().toString().trim().equals("")){
-            txtNombre.setError( "El nombre es requerido" );
+        if (txtNombre.getText().toString().trim().equals("")) {
+            txtNombre.setError("El nombre es requerido");
             formularioValido = false;
         }
-        if(txtApellidos.getText().toString().trim().equals("")){
-            txtApellidos.setError( "El apellido es requerido" );
+        if (txtApellidos.getText().toString().trim().equals("")) {
+            txtApellidos.setError("El apellido es requerido");
             formularioValido = false;
         }
-        if(txtNroDoc.getText().toString().trim().equals("")){
-            txtNroDoc.setError( "El Nro. Documento es requerido" );
-            formularioValido = false;
-        }
-
-        if(txtFechaNacimiento.getText().toString().trim().equals("")){
-            txtFechaNacimiento.setError( "La fecha de nacimiento es requerida" );
+        if (txtNroDoc.getText().toString().trim().equals("")) {
+            txtNroDoc.setError("El Nro. Documento es requerido");
             formularioValido = false;
         }
 
-        if(spnTipoDoc.getSelectedItem().toString().trim().equals("")){
-            ((TextView)spnTipoDoc.getSelectedView()).setError("Debe seleccionar al menos un tipo de Documento");
+        if (txtFechaNacimiento.getText().toString().trim().equals("")) {
+            txtFechaNacimiento.setError("La fecha de nacimiento es requerida");
             formularioValido = false;
         }
 
-        if(spnSexo.getSelectedItem().toString().trim().equals("")){
-            ((TextView)spnSexo.getSelectedView()).setError("Debe seleccionar al menos un tipo de Sexo");
+        if (spnTipoDoc.getSelectedItem().toString().trim().equals("")) {
+            ((TextView) spnTipoDoc.getSelectedView()).setError("Debe seleccionar al menos un tipo de Documento");
             formularioValido = false;
         }
 
-        if(txtEmail.getText().toString().trim().equals("")){
-            txtEmail.setError( "La direccion de correo es requerida" );
+        if (spnSexo.getSelectedItem().toString().trim().equals("")) {
+            ((TextView) spnSexo.getSelectedView()).setError("Debe seleccionar al menos un tipo de Sexo");
             formularioValido = false;
         }
 
-        if(txtTelPrincipal.getText().toString().trim().equals("")){
+        if (txtEmail.getText().toString().trim().equals("")) {
+            txtEmail.setError("La direccion de correo es requerida");
+            formularioValido = false;
+        }
+
+        if (txtTelPrincipal.getText().toString().trim().equals("")) {
             txtTelPrincipal.setError("El número de teléfono principal es requerido");
             formularioValido = false;
         }
 
-        if(!formularioValido){
+        if (!formularioValido) {
             Toast.makeText(getApplicationContext(), "El registro no se pudo completar, por favor revise que todos los campos sean válidos",
                     Toast.LENGTH_LONG).show();
-        }else{
+        } else {
 
             try {
 
@@ -269,6 +270,8 @@ public class RegistroActivity extends ActionBarActivity {
                 unaPersona.setTelPrincipal(txtTelPrincipal.getText().toString());
 
                 unaPersona.setCuit(txtCuit.getText().toString());
+
+                unaPersona.setNumeroPartida(txtNumeroPartida.getText().toString());
 
                 unaPersona.setEstadoCivil(spnEstadoCivil.getSelectedItem().toString());
 
@@ -308,7 +311,7 @@ public class RegistroActivity extends ActionBarActivity {
                 finish();
 
 
-            }catch(Exception e){
+            } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Hubo un errror al intentar guardar el formulario.",
                         Toast.LENGTH_LONG).show();
             }
@@ -385,23 +388,26 @@ public class RegistroActivity extends ActionBarActivity {
         if (filteredItems.size() > 0) {
             objPadron = filteredItems.get(0);
             Toast.makeText(this, "Contribuyente encontrado en Padron.", Toast.LENGTH_SHORT).show();
+
+            String[] razonSocial = objPadron.getRazonSocial().split(",");
+            String apellido = razonSocial[0];
+            String nombre = razonSocial[1];
+            EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
+            EditText txtNombres = (EditText) findViewById(R.id.nombres);
+            EditText txtCuit = (EditText) findViewById(R.id.cuit);
+            EditText txtDocumento = (EditText) findViewById(R.id.numeroDocumento);
+            EditText txtNumeroPartida = (EditText) findViewById(R.id.numeroPartida);
+
+            txtApellidos.setText(apellido);
+            txtNombres.setText(nombre);
+            txtCuit.setText(objPadron.getCuit());
+            txtDocumento.setText(objPadron.getDocumento());
+            txtNumeroPartida.setText(objPadron.getPartida());
         } else {
-            objPadron = new Padron();
+
             Toast.makeText(this, "Contribuyente NO encontrado en Padron.", Toast.LENGTH_SHORT).show();
         }
 
 
-        String[] razonSocial = objPadron.getRazonSocial().split(",");
-        String apellido = razonSocial[0];
-        String nombre = razonSocial[1];
-        EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
-        EditText txtNombres = (EditText) findViewById(R.id.nombres);
-        EditText txtCuit = (EditText) findViewById(R.id.cuit);
-        EditText txtDocumento = (EditText) findViewById(R.id.numeroDocumento);
-
-        txtApellidos.setText(apellido);
-        txtNombres.setText(nombre);
-        txtCuit.setText(objPadron.getCuit());
-        txtDocumento.setText(objPadron.getDocumento());
     }
 }

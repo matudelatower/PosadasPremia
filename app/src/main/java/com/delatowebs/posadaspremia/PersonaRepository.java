@@ -24,6 +24,7 @@ public class PersonaRepository {
         ContentValues values = new ContentValues();
         values.put(Persona.KEY_DOCUMENTO, persona.getDocumento());
         values.put(Persona.KEY_CUIT, persona.getCuit());
+        values.put(Persona.KEY_NUMERO_PARTIDA, persona.getNumeroPartida());
         values.put(Persona.KEY_APELLIDO, persona.getApellido());
         values.put(Persona.KEY_NOMBRE, persona.getNombre());
         values.put(Persona.KEY_TIPO_DOC, persona.getTipoDocumento());
@@ -64,6 +65,7 @@ public class PersonaRepository {
 
         values.put(Persona.KEY_DOCUMENTO, persona.getDocumento());
         values.put(Persona.KEY_CUIT, persona.getCuit());
+        values.put(Persona.KEY_NUMERO_PARTIDA, persona.getNumeroPartida());
         values.put(Persona.KEY_APELLIDO, persona.getApellido());
         values.put(Persona.KEY_NOMBRE, persona.getNombre());
         values.put(Persona.KEY_TIPO_DOC, persona.getTipoDocumento());
@@ -91,6 +93,7 @@ public class PersonaRepository {
                 Persona.KEY_ID + "," +
                 Persona.KEY_DOCUMENTO + "," +
                 Persona.KEY_CUIT + "," +
+                Persona.KEY_NUMERO_PARTIDA + "," +
                 Persona.KEY_APELLIDO + "," +
                 Persona.KEY_NOMBRE + "," +
                 Persona.KEY_TIPO_DOC + "," +
@@ -134,6 +137,7 @@ public class PersonaRepository {
                 Persona.KEY_ID + "," +
                 Persona.KEY_DOCUMENTO + "," +
                 Persona.KEY_CUIT + "," +
+                Persona.KEY_NUMERO_PARTIDA + "," +
                 Persona.KEY_APELLIDO + "," +
                 Persona.KEY_NOMBRE + "," +
                 Persona.KEY_TIPO_DOC + "," +
@@ -183,6 +187,7 @@ public class PersonaRepository {
                 Persona.KEY_ID + "," +
                 Persona.KEY_DOCUMENTO + "," +
                 Persona.KEY_CUIT + "," +
+                Persona.KEY_NUMERO_PARTIDA + "," +
                 Persona.KEY_APELLIDO + "," +
                 Persona.KEY_NOMBRE + "," +
                 Persona.KEY_TIPO_DOC + "," +
@@ -214,6 +219,7 @@ public class PersonaRepository {
                 persona.setId(cursor.getInt(cursor.getColumnIndex(Persona.KEY_ID)));
                 persona.setDocumento(cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
                 persona.setCuit(cursor.getString(cursor.getColumnIndex(Persona.KEY_CUIT)));
+                persona.setNumeroPartida(cursor.getString(cursor.getColumnIndex(Persona.KEY_NUMERO_PARTIDA)));
                 persona.setApellido(cursor.getString(cursor.getColumnIndex(Persona.KEY_APELLIDO)));
                 persona.setNombre(cursor.getString(cursor.getColumnIndex(Persona.KEY_NOMBRE)));
                 persona.setTipoDocumento(cursor.getString(cursor.getColumnIndex(Persona.KEY_TIPO_DOC)));
@@ -299,6 +305,7 @@ public class PersonaRepository {
                 Persona.KEY_ID + "," +
                 Persona.KEY_DOCUMENTO + "," +
                 Persona.KEY_CUIT + "," +
+                Persona.KEY_NUMERO_PARTIDA + "," +
                 Persona.KEY_APELLIDO + "," +
                 Persona.KEY_NOMBRE + "," +
                 Persona.KEY_TIPO_DOC + "," +
@@ -334,6 +341,7 @@ public class PersonaRepository {
                 persona.put("creadoPor", cursor.getString(cursor.getColumnIndex(Persona.KEY_CREADO_POR)));
                 persona.put("documento", cursor.getString(cursor.getColumnIndex(Persona.KEY_DOCUMENTO)));
                 persona.put("cuit", cursor.getString(cursor.getColumnIndex(Persona.KEY_CUIT)));
+                persona.put("numeroPartida", cursor.getString(cursor.getColumnIndex(Persona.KEY_NUMERO_PARTIDA)));
                 persona.put("tipoDoc", cursor.getString(cursor.getColumnIndex(Persona.KEY_TIPO_DOC)));
                 persona.put("fechaNacimiento", cursor.getString(cursor.getColumnIndex(Persona.KEY_FECHA_NACIMIENTO)));
                 persona.put("sexo", cursor.getString(cursor.getColumnIndex(Persona.KEY_SEXO)));
@@ -367,6 +375,7 @@ public class PersonaRepository {
                 Persona.KEY_ID + "," +
                 Persona.KEY_DOCUMENTO + "," +
                 Persona.KEY_CUIT + "," +
+                Persona.KEY_NUMERO_PARTIDA + "," +
                 Persona.KEY_APELLIDO + "," +
                 Persona.KEY_NOMBRE + "," +
                 Persona.KEY_TIPO_DOC + "," +

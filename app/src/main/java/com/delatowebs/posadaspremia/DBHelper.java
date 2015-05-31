@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHelper  extends SQLiteOpenHelper {
     //version number to upgrade database version
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     // Database Name
     private static final String DATABASE_NAME = "cuestionario.db";
@@ -31,6 +31,7 @@ public class DBHelper  extends SQLiteOpenHelper {
                 + Persona.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + Persona.KEY_DOCUMENTO + " TEXT, "
                 + Persona.KEY_CUIT + " TEXT, "
+                + Persona.KEY_NUMERO_PARTIDA + " TEXT, "
                 + Persona.KEY_APELLIDO + " TEXT, "
                 + Persona.KEY_NOMBRE + " TEXT, "
                 + Persona.KEY_TIPO_DOC + " TEXT, "

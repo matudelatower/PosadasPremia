@@ -138,6 +138,10 @@ public class AdminActivity extends ActionBarActivity {
                 serializer.text(object.get("cuit").toString());
                 serializer.endTag(null, "cuit");
 
+                serializer.startTag(null, "numero_partida");
+                serializer.text(object.get("numeroPartida").toString());
+                serializer.endTag(null, "numero_partida");
+
                 serializer.startTag(null, "tipo_doc");
                 serializer.text(object.get("tipoDoc").toString());
                 serializer.endTag(null, "tipo_doc");

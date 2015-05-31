@@ -2,9 +2,8 @@
 <resources>
     <!--TIPO BUSQUEDA-->
     <string-array name="tipo_busqueda">
-        <item></item>
-        <item>DNI</item>
         <item>Partida</item>
+        <item>DNI</item>
     </string-array>
     <!--TIPO DOCUMENTO-->
     <string-array name="tipo_documento">
