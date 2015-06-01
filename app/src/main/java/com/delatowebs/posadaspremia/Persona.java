@@ -11,6 +11,7 @@ public class Persona {
     public static final String KEY_ID = "_id";
     public static final String KEY_DOCUMENTO = "documento";
     public static final String KEY_CUIT = "cuit";
+    public static final String KEY_NUMERO_PARTIDA = "numero_partida";
     public static final String KEY_APELLIDO = "apellido";
     public static final String KEY_NOMBRE = "nombre";
     public static final String KEY_TIPO_DOC = "tipo_documento";
@@ -47,6 +48,15 @@ public class Persona {
     private String cuestionario;
     private String creadoPor;
     private String actualizado;
+    private String numeroPartida;
+
+    public String getNumeroPartida() {
+        return numeroPartida;
+    }
+
+    public void setNumeroPartida(String numeroPartida) {
+        this.numeroPartida = numeroPartida;
+    }
 
     public Integer getId() {
         return id;

@@ -107,6 +107,7 @@ public class RegistroActivity extends ActionBarActivity {
         EditText txtEmail = (EditText) findViewById(R.id.email);
         EditText txtTelPrincipal = (EditText) findViewById(R.id.telefonoPrincipal);
         EditText txtCuit = (EditText) findViewById(R.id.cuit);
+        EditText txtNumeroPartida = (EditText) findViewById(R.id.numeroPartida);
         Spinner spnEstadoCivil = (Spinner) findViewById(R.id.estadoCivil);
         EditText txtTelSecundario = (EditText) findViewById(R.id.telefonoSecundario);
         EditText txtDireccion = (EditText) findViewById(R.id.direccionContacto);
@@ -187,6 +188,8 @@ public class RegistroActivity extends ActionBarActivity {
                 unaPersona.setTelPrincipal(txtTelPrincipal.getText().toString());
 
                 unaPersona.setCuit(txtCuit.getText().toString());
+
+                unaPersona.setNumeroPartida(txtNumeroPartida.getText().toString());
 
                 unaPersona.setEstadoCivil(spnEstadoCivil.getSelectedItem().toString());
 
@@ -305,24 +308,27 @@ public class RegistroActivity extends ActionBarActivity {
         if (filteredItems.size() > 0) {
             objPadron = filteredItems.get(0);
             Toast.makeText(this, "Contribuyente encontrado en Padron.", Toast.LENGTH_SHORT).show();
+
+            String[] razonSocial = objPadron.getRazonSocial().split(",");
+            String apellido = razonSocial[0];
+            String nombre = razonSocial[1];
+            EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
+            EditText txtNombres = (EditText) findViewById(R.id.nombres);
+            EditText txtCuit = (EditText) findViewById(R.id.cuit);
+            EditText txtDocumento = (EditText) findViewById(R.id.numeroDocumento);
+            EditText txtNumeroPartida = (EditText) findViewById(R.id.numeroPartida);
+
+            txtApellidos.setText(apellido);
+            txtNombres.setText(nombre);
+            txtCuit.setText(objPadron.getCuit());
+            txtDocumento.setText(objPadron.getDocumento());
+            txtNumeroPartida.setText(objPadron.getPartida());
         } else {
-            objPadron = new Padron();
+
             Toast.makeText(this, "Contribuyente NO encontrado en Padron.", Toast.LENGTH_SHORT).show();
         }
 
 
-        String[] razonSocial = objPadron.getRazonSocial().split(",");
-        String apellido = razonSocial[0];
-        String nombre = razonSocial[1];
-        EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
-        EditText txtNombres = (EditText) findViewById(R.id.nombres);
-        EditText txtCuit = (EditText) findViewById(R.id.cuit);
-        EditText txtDocumento = (EditText) findViewById(R.id.numeroDocumento);
-
-        txtApellidos.setText(apellido);
-        txtNombres.setText(nombre);
-        txtCuit.setText(objPadron.getCuit());
-        txtDocumento.setText(objPadron.getDocumento());
     }
 
     private void editarRegistro() {

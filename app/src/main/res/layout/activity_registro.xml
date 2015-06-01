@@ -142,6 +142,19 @@
                 android:layout_height="wrap_content"
                 android:tag="cuit" />
 
+            <TextView
+                android:id="@+id/txtNumeroPartida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numero de Partida" />
+
+
+            <EditText
+                android:id="@+id/numeroPartida"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:tag="numeroPartida" />
+
 
             <TextView
                 android:id="@+id/txtFechaNacimiento"

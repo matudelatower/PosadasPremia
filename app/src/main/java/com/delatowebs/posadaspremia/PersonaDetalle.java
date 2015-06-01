@@ -29,6 +29,7 @@ public class PersonaDetalle extends ActionBarActivity implements android.view.Vi
     EditText editTextApellido;
     EditText editTextDocumento;
     EditText editTextCuit;
+    EditText editTextNumeroPartida;
     EditText editTextFechaNacimiento;
     EditText editTextMail;
     EditText editTextTelPrincipal;
@@ -37,6 +38,7 @@ public class PersonaDetalle extends ActionBarActivity implements android.view.Vi
     EditText editTextNumero;
     EditText editTextDepartamento;
     EditText editTextPiso;
+
     Spinner spinnerTipoDocumento;
     Spinner spinnerSexo;
     Spinner spinnerEstadoCivil;
@@ -118,6 +120,7 @@ public class PersonaDetalle extends ActionBarActivity implements android.view.Vi
             persona.setApellido(editTextApellido.getText().toString());
             persona.setDocumento(editTextDocumento.getText().toString());
             persona.setCuit(editTextCuit.getText().toString());
+            persona.setNumeroPartida(editTextNumeroPartida.getText().toString());
             persona.setFechaNacimiento(editTextFechaNacimiento.getText().toString());
             persona.setTelPrincipal(editTextTelPrincipal.getText().toString());
             persona.setTelSecundario(editTextTelSecundario.getText().toString());
