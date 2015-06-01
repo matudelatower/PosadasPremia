@@ -106,11 +106,11 @@ public class ListadoRegistroActivity extends ListActivity {
         finish();
     }
 
-    public void EditarEncuesta(View v) {
+    public void EditarPersona(View v) {
 
         if (getIntent().hasExtra("numeroDni")) {
 
-            //obetngo el id de la encuesta
+            //obetngo el id de la persona
             String registroId = ((TextView) v.findViewById(R.id.registroId)).getText().toString();
 
             TabletRepository tabletRepo = new TabletRepository(this);
@@ -120,9 +120,8 @@ public class ListadoRegistroActivity extends ListActivity {
             //llamo a la pantalla que contiene el cuestionario
             Intent i = new Intent(this, RegistroActivity.class);
 
-            //envio el id de encuesta, de esta forma se identifica si se estaría editando la encuesta
-            i.putExtra("cuestionarioId", registroId);
-            i.putExtra("nroEncuesta", nroEncuesta);
+            //envio el id de registro, de esta forma se identifica si se estaría editando la persona
+            i.putExtra("registroId", registroId);
             i.putExtra("numeroDni", getIntent().getExtras().getString("numeroDni"));
             startActivity(i);
         }

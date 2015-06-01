@@ -28,12 +28,6 @@ public class XmlLoader  {
 
     private static final String XML_CUESTIONARIO_TAG = "cuestionario";
 
-    private static final String XML_MIEMBROS_HOGAR_TAG = "miembros_hogar";
-
-    private static final String XML_MIEMBRO_TAG = "miembro";
-
-    private static final String XML_MEDIOS_TRANSPORTE_TAG = "medios_transporte";
-
     private static final String XML_MEDIO_TAG = "medio";
 
     private static final String XML_ITEM_TAG = "item";
@@ -45,81 +39,25 @@ public class XmlLoader  {
     private static final String XML_RESPUESTA_TAG = "respuesta";
 
 
-//    void loadXml(String xml, LinearLayout container,RegistroActivity context) throws ParserConfigurationException {
-//        InputStream is = new ByteArrayInputStream(xml.getBytes());
-//        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-//        dbf.setNamespaceAware(true);
-//
-//        try {
-//            DocumentBuilder db = dbf.newDocumentBuilder();
-//            Document doc = db.parse(is);
-//
-//
-//            NodeList itemList = doc.getElementsByTagName("item");
-//
-//            readItems(itemList,container);
-//
-//
-//            //miembro list
-//            NodeList miembroList = doc.getElementsByTagName("miembro");
-//
-//            LinearLayout miembrosContainer = (LinearLayout) container.findViewById(R.id.miembrosContainer);
-//
-//            for (int j = 0; j < miembroList.getLength(); ++j) {
-//
-//                Element miembro = (Element) miembroList.item(j);
-//
-//                if(j==0){
-//                    LinearLayout miembrosLayout = (LinearLayout) miembrosContainer.getChildAt(j);
-//
-//                    readItems(miembro.getElementsByTagName("item"),miembrosLayout);
-//                }else{
-////                    MiembrosHogarFragment miFragmento = new MiembrosHogarFragment();
-////
-////                    context.getFragmentManager().beginTransaction()
-////                            .add(miembrosContainer.getId(), miFragmento)
-////                            .disallowAddToBackStack()
-////                            .commit();
-////
-////                    miFragmento.setXmlItemList(miembro.getElementsByTagName("item"));
-//
-//                }
-//            }
-//
-//
-//            //medio list
-//            NodeList mediosList = doc.getElementsByTagName("medio");
-//
-//            LinearLayout mediosContainer = (LinearLayout) container.findViewById(R.id.mediosTransporteContainer);
-//
-//            for (int j = 0; j < mediosList.getLength(); ++j) {
-//
-//                Element medio = (Element) mediosList.item(j);
-//
-//                if(j==0){
-//                    LinearLayout mediosLayout = (LinearLayout) mediosContainer.getChildAt(j);
-//
-//                    readItems(medio.getElementsByTagName("item"),mediosLayout);
-//                }else{
-////                    MediosTransporteFragment miFragmento = new MediosTransporteFragment();
-////
-////                    context.getFragmentManager().beginTransaction()
-////                            .add(mediosContainer.getId(), miFragmento)
-////                            .disallowAddToBackStack()
-////                            .commit();
-////
-////                    miFragmento.setXmlItemList(medio.getElementsByTagName("item"));
-//
-//                }
-//            }
-//
-//
-//
-//
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//    }
+    void loadXml(String xml, LinearLayout container,RegistroActivity context) throws ParserConfigurationException {
+        InputStream is = new ByteArrayInputStream(xml.getBytes());
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setNamespaceAware(true);
+
+        try {
+
+            DocumentBuilder db = dbf.newDocumentBuilder();
+
+            Document doc = db.parse(is);
+
+            NodeList itemList = doc.getElementsByTagName("item");
+
+            readItems(itemList,container);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 
     public void readItems(NodeList itemList, LinearLayout container) {
