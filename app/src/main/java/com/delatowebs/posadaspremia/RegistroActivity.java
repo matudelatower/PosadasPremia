@@ -333,21 +333,22 @@ public class RegistroActivity extends ActionBarActivity {
 
     private void editarRegistro() {
 
-        EditText txtNombre = (EditText) findViewById(R.id.nombres);
-        EditText txtApellidos = (EditText) findViewById(R.id.apellidos);
-        Spinner spnTipoDoc = (Spinner) findViewById(R.id.tipoDocumento);
-        EditText txtNroDoc = (EditText) findViewById(R.id.numeroDocumento);
+        EditText txtNombre          = (EditText) findViewById(R.id.nombres);
+        EditText txtApellidos       = (EditText) findViewById(R.id.apellidos);
+        Spinner  spnTipoDoc         = (Spinner) findViewById(R.id.tipoDocumento);
+        EditText txtNroDoc          = (EditText) findViewById(R.id.numeroDocumento);
         EditText txtFechaNacimiento = (EditText) findViewById(R.id.fechaNacimiento);
-        Spinner spnSexo = (Spinner) findViewById(R.id.sexo);
-        EditText txtEmail = (EditText) findViewById(R.id.email);
-        EditText txtTelPrincipal = (EditText) findViewById(R.id.telefonoPrincipal);
-        EditText txtCuit = (EditText) findViewById(R.id.cuit);
-        Spinner spnEstadoCivil = (Spinner) findViewById(R.id.estadoCivil);
-        EditText txtTelSecundario = (EditText) findViewById(R.id.telefonoSecundario);
-        EditText txtDireccion = (EditText) findViewById(R.id.direccionContacto);
-        EditText txtNumero = (EditText) findViewById(R.id.numeroPuerta);
-        EditText txtDepartamento = (EditText) findViewById(R.id.departamento);
-        EditText txtPiso = (EditText) findViewById(R.id.piso);
+        Spinner  spnSexo            = (Spinner) findViewById(R.id.sexo);
+        EditText txtEmail           = (EditText) findViewById(R.id.email);
+        EditText txtTelPrincipal    = (EditText) findViewById(R.id.telefonoPrincipal);
+        EditText txtCuit            = (EditText) findViewById(R.id.cuit);
+        Spinner  spnEstadoCivil     = (Spinner) findViewById(R.id.estadoCivil);
+        EditText txtTelSecundario   = (EditText) findViewById(R.id.telefonoSecundario);
+        EditText txtDireccion       = (EditText) findViewById(R.id.direccionContacto);
+        EditText txtNumero          = (EditText) findViewById(R.id.numeroPuerta);
+        EditText txtDepartamento    = (EditText) findViewById(R.id.departamento);
+        EditText txtPiso            = (EditText) findViewById(R.id.piso);
+        EditText txtNroPartida      = (EditText) findViewById(R.id.numeroPartida);
 
 
         try {
@@ -385,6 +386,8 @@ public class RegistroActivity extends ActionBarActivity {
 
             txtPiso.setText(unaPersona.getPiso());
 
+            txtNroPartida.setText(unaPersona.getNumeroPartida());
+
             String xmlEncuesta = unaPersona.getCuestionario();
 
             XmlLoader xmlLoad = new XmlLoader();
@@ -392,7 +395,6 @@ public class RegistroActivity extends ActionBarActivity {
             LinearLayout encuestaContainer = (LinearLayout) findViewById(R.id.encuestaLayout);
 
             xmlLoad.loadXml(xmlEncuesta, encuestaContainer, this);
-
 
         } catch (Exception e) {
             e.printStackTrace();
